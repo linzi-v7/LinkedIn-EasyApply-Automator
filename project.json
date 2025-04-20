@@ -4,7 +4,8 @@
   "description": "LinkedIn Easy Apply Automation, Software Requirements Engineering Project",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.System.Activities": "[25.2.1]"
+    "UiPath.System.Activities": "[25.2.1]",
+    "UiPath.UIAutomation.Activities": "[24.10.12]"
   },
   "webServices": [],
   "entitiesStores": [],
