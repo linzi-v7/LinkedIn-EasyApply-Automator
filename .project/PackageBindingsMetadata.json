@@ -19,16 +19,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           }
         },
@@ -71,16 +63,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -111,16 +95,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -167,16 +143,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -219,16 +187,12 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
             "ValueSource": "Constant"
           },
-          "DisplayLabel": {
-            "Value": "FullName",
+          "SolutionsSupport": {
+            "Value": "true",
             "ValueSource": "Constant"
           }
         },
@@ -267,16 +231,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -307,16 +263,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -347,16 +295,12 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
             "ValueSource": "Constant"
           },
-          "DisplayLabel": {
-            "Value": "FullName",
+          "SolutionsSupport": {
+            "Value": "true",
             "ValueSource": "Constant"
           }
         },
@@ -383,16 +327,12 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
             "ValueSource": "Constant"
           },
-          "DisplayLabel": {
-            "Value": "FullName",
+          "SolutionsSupport": {
+            "Value": "true",
             "ValueSource": "Constant"
           }
         },
@@ -435,16 +375,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -499,20 +431,8 @@
             "Value": "MaxJobsForActivation",
             "ValueSource": "Property"
           },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
             "ValueSource": "Constant"
           }
         },
@@ -539,16 +459,12 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
             "ValueSource": "Constant"
           },
-          "DisplayLabel": {
-            "Value": "FullName",
+          "SolutionsSupport": {
+            "Value": "true",
             "ValueSource": "Constant"
           }
         },
@@ -575,16 +491,12 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
             "ValueSource": "Constant"
           },
-          "DisplayLabel": {
-            "Value": "FullName",
+          "SolutionsSupport": {
+            "Value": "true",
             "ValueSource": "Constant"
           }
         },
@@ -635,16 +547,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -687,16 +591,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -727,16 +623,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -767,16 +655,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -807,16 +687,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -847,16 +719,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -887,16 +751,8 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           },
           "SolutionsSupport": {
@@ -926,16 +782,8 @@
             "Value": "CronExpression",
             "ValueSource": "Property"
           },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "DisplayLabel": {
-            "Value": "FullName",
             "ValueSource": "Constant"
           }
         },
@@ -962,20 +810,316 @@
           }
         },
         "Arguments": {
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
           "BindingsVersion": {
             "Value": "2.1",
             "ValueSource": "Constant"
           },
-          "DisplayLabel": {
-            "Value": "FullName",
-            "ValueSource": "Constant"
-          },
           "SolutionsSupport": {
             "Value": "true",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.IntegrationService.Activities.Runtime.Activities.ConnectorActivity": [
+      {
+        "PublishNullValues": false,
+        "SubBindings": [],
+        "FromInstanceProperty": "BindingsJson",
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.IntegrationService.Activities.Runtime.Activities.ConnectorHttpActivity": [
+      {
+        "PublishNullValues": false,
+        "SubBindings": [],
+        "FromInstanceProperty": "BindingsJson",
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.IntegrationService.Activities.Runtime.Activities.ConnectorPersistenceActivity": [
+      {
+        "PublishNullValues": false,
+        "SubBindings": [],
+        "FromInstanceProperty": "BindingsJson",
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.IntegrationService.Activities.Runtime.Activities.ConnectorTriggerActivity": [
+      {
+        "PublishNullValues": false,
+        "SubBindings": [],
+        "FromInstanceProperty": "BindingsJson",
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.Mail.Activities.Business.ExchangeApplicationCard": [
+      {
+        "Type": "Connection",
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "UseConnectionService": {
+            "Value": "UseConnectionService",
+            "ValueSource": "Property"
+          },
+          "Connector": {
+            "Value": "Connector",
+            "ValueSource": "Property"
+          }
+        },
+        "DefaultValueSource": "Default"
+      }
+    ],
+    "UiPath.Mail.Activities.Business.GmailApplicationCard": [
+      {
+        "Type": "Connection",
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "UseConnectionService": {
+            "Value": "UseConnectionService",
+            "ValueSource": "Property"
+          },
+          "Connector": {
+            "Value": "Connector",
+            "ValueSource": "Property"
+          }
+        },
+        "DefaultValueSource": "Default"
+      }
+    ],
+    "UiPath.Mail.Activities.Business.NewGmailTrigger": [
+      {
+        "Type": "EventTrigger",
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Connector": {
+            "Value": "Connector",
+            "ValueSource": "Property"
+          },
+          "Operation": {
+            "Value": "Operation",
+            "ValueSource": "Property"
+          },
+          "ObjectName": {
+            "Value": "ObjectName",
+            "ValueSource": "Property"
+          }
+        },
+        "DefaultValueSource": "Default"
+      }
+    ],
+    "UiPath.Mail.Activities.Business.NewO365EmailTrigger": [
+      {
+        "Type": "EventTrigger",
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Connector": {
+            "Value": "Connector",
+            "ValueSource": "Property"
+          },
+          "Operation": {
+            "Value": "Operation",
+            "ValueSource": "Property"
+          },
+          "ObjectName": {
+            "Value": "ObjectName",
+            "ValueSource": "Property"
+          }
+        },
+        "DefaultValueSource": "Default"
+      }
+    ],
+    "UiPath.Mail.IMAP.Activities.DeleteImapMailMessage": [
+      {
+        "Type": "Connection",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "ConnectionId",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.1",
+            "ValueSource": "Constant"
+          },
+          "Connector": {
+            "Value": "uipath-mail-mail",
+            "ValueSource": "Constant"
+          },
+          "UseConnectionService": {
+            "Value": "True",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.Mail.IMAP.Activities.GetIMAPMailMessages": [
+      {
+        "Type": "Connection",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "ConnectionId",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.1",
+            "ValueSource": "Constant"
+          },
+          "Connector": {
+            "Value": "uipath-mail-mail",
+            "ValueSource": "Constant"
+          },
+          "UseConnectionService": {
+            "Value": "True",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.Mail.IMAP.Activities.MoveIMAPMailMessageToFolder": [
+      {
+        "Type": "Connection",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "ConnectionId",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.1",
+            "ValueSource": "Constant"
+          },
+          "Connector": {
+            "Value": "uipath-mail-mail",
+            "ValueSource": "Constant"
+          },
+          "UseConnectionService": {
+            "Value": "True",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.Mail.POP3.Activities.GetPOP3MailMessages": [
+      {
+        "Type": "Connection",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "ConnectionId",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.1",
+            "ValueSource": "Constant"
+          },
+          "Connector": {
+            "Value": "uipath-mail-mail",
+            "ValueSource": "Constant"
+          },
+          "UseConnectionService": {
+            "Value": "True",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.Mail.SMTP.Activities.SendMail": [
+      {
+        "Type": "Connection",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "ConnectionId",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "ConnectionId": {
+            "Value": "ConnectionId",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.1",
+            "ValueSource": "Constant"
+          },
+          "Connector": {
+            "Value": "uipath-mail-mail",
+            "ValueSource": "Constant"
+          },
+          "UseConnectionService": {
+            "Value": "True",
             "ValueSource": "Constant"
           }
         },
@@ -1055,38 +1199,6 @@
       }
     ],
     "UiPath.MicrosoftOffice365.Activities.Calendar.DeleteEventConnections": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.MicrosoftOffice365.Activities.Calendar.FindMeetingTimesConnections": [
       {
         "Type": "Connection",
         "PublishNullValues": false,
@@ -1885,207 +1997,6 @@
               "ObjectName": {
                 "Value": "CuratedFile",
                 "ValueSource": "Constant"
-              },
-              "DisplayLabel": {
-                "Value": "FullName",
-                "ValueSource": "Constant"
-              }
-            },
-            "SubBindings": [],
-            "DefaultValueSource": "Property"
-          }
-        ],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.MicrosoftOffice365.Activities.Excel.CopyRangeConnections": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [
-          {
-            "Type": "Property",
-            "PublishNullValues": false,
-            "Key": {
-              "Value": "ResourceKey",
-              "ValueSource": "Property"
-            },
-            "Values": {
-              "FullName": {
-                "Value": "BrowserItemFriendlyName",
-                "ValueSource": "Property"
-              },
-              "ID": {
-                "Value": "BrowserItemId",
-                "ValueSource": "Property"
-              },
-              "ParentDriveID": {
-                "Value": "BrowserDriveId",
-                "ValueSource": "Property"
-              }
-            },
-            "Arguments": {
-              "ActivityName": {
-                "Value": "DisplayName",
-                "ValueSource": "Property"
-              },
-              "BindingsVersion": {
-                "Value": "2.1",
-                "ValueSource": "Constant"
-              },
-              "ObjectName": {
-                "Value": "CuratedFile",
-                "ValueSource": "Constant"
-              },
-              "DisplayLabel": {
-                "Value": "FullName",
-                "ValueSource": "Constant"
-              }
-            },
-            "SubBindings": [],
-            "DefaultValueSource": "Property"
-          },
-          {
-            "Type": "Property",
-            "PublishNullValues": false,
-            "Key": {
-              "Value": "RelativePathBindingsKey",
-              "ValueSource": "Property"
-            },
-            "Values": {
-              "FullName": {
-                "Value": "BrowserParentItemFriendlyName",
-                "ValueSource": "Property"
-              },
-              "ID": {
-                "Value": "BrowserParentItemId",
-                "ValueSource": "Property"
-              },
-              "ParentDriveID": {
-                "Value": "BrowserParentDriveId",
-                "ValueSource": "Property"
-              }
-            },
-            "Arguments": {
-              "ActivityName": {
-                "Value": "DisplayName",
-                "ValueSource": "Property"
-              },
-              "BindingsVersion": {
-                "Value": "2.1",
-                "ValueSource": "Constant"
-              },
-              "ObjectName": {
-                "Value": "ParentFolderObjectName",
-                "ValueSource": "Property"
-              },
-              "DisplayLabel": {
-                "Value": "FullName",
-                "ValueSource": "Constant"
-              }
-            },
-            "SubBindings": [],
-            "DefaultValueSource": "Property"
-          },
-          {
-            "Type": "Property",
-            "PublishNullValues": false,
-            "Key": {
-              "Value": "SecondaryResourceKey",
-              "ValueSource": "Property"
-            },
-            "Values": {
-              "FullName": {
-                "Value": "BrowserDestinationItemFriendlyName",
-                "ValueSource": "Property"
-              },
-              "ID": {
-                "Value": "BrowserDestinationItemId",
-                "ValueSource": "Property"
-              },
-              "ParentDriveID": {
-                "Value": "BrowserDestinationDriveId",
-                "ValueSource": "Property"
-              }
-            },
-            "Arguments": {
-              "ActivityName": {
-                "Value": "DisplayName",
-                "ValueSource": "Property"
-              },
-              "BindingsVersion": {
-                "Value": "2.1",
-                "ValueSource": "Constant"
-              },
-              "ObjectName": {
-                "Value": "CuratedFile",
-                "ValueSource": "Constant"
-              },
-              "DisplayLabel": {
-                "Value": "FullName",
-                "ValueSource": "Constant"
-              }
-            },
-            "SubBindings": [],
-            "DefaultValueSource": "Property"
-          },
-          {
-            "Type": "Property",
-            "PublishNullValues": false,
-            "Key": {
-              "Value": "SecondaryResourceRelativePathBindingsKey",
-              "ValueSource": "Property"
-            },
-            "Values": {
-              "FullName": {
-                "Value": "BrowserParentDestinationItemFriendlyName",
-                "ValueSource": "Property"
-              },
-              "ID": {
-                "Value": "BrowserParentDestinationItemId",
-                "ValueSource": "Property"
-              },
-              "ParentDriveID": {
-                "Value": "BrowserParentDestinationDriveId",
-                "ValueSource": "Property"
-              }
-            },
-            "Arguments": {
-              "ActivityName": {
-                "Value": "DisplayName",
-                "ValueSource": "Property"
-              },
-              "BindingsVersion": {
-                "Value": "2.1",
-                "ValueSource": "Constant"
-              },
-              "ObjectName": {
-                "Value": "ParentFolderObjectName",
-                "ValueSource": "Property"
               },
               "DisplayLabel": {
                 "Value": "FullName",
