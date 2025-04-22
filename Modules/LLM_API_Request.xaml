@@ -1,4 +1,15 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LLM_API_Request" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="LLM_API_Request_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snh="clr-namespace:System.Net.Http;assembly=System.Net.Http" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="CVTextArg" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,12 +36,34 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Net.Http</x:String>
+      <x:String>System.Xml.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
@@ -50,13 +83,221 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.Http</AssemblyReference>
+      <AssemblyReference>System.Net.Http.WinHttpHandler</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LLM_API_Request" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="902.4000000000001,477.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="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" Name="apiKey" />
+      <Variable x:TypeArguments="x:String" Name="requestBody" />
+      <Variable x:TypeArguments="snh:HttpResponseMessage" Name="response" />
+      <Variable x:TypeArguments="x:String" Name="jsonResponse" />
+      <Variable x:TypeArguments="njl:JObject" Name="parsedResponse" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[requestBody]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">["{""model"": ""mistralai/mistral-nemo:free"", ""messages"": [{""role"": ""user"", ""content"": 
+""You are a CV parsing expert. Extract the required information from the provided CV in a structured and minimal JSON format. The extracted JSON will be used to automatically fill job application forms, so prioritize accuracy, consistency, and completeness.
+
+Instructions:
+Extract all technical skills along with their years of experience.
+
+Infer years of experience where not explicitly mentioned (e.g., from education, job titles, or project dates).
+
+If experience duration is not clear, default to 1 year.
+
+Include implicit experience (e.g., tools or technologies used in job descriptions or personal projects, even if not listed in a skills section).
+
+Do not include extra or unnecessary data. Stick to key information typically required for job application forms.
+
+Ensure uniform JSON format for all extracted skills.
+
+Follow the provided JSON schema strictly. Do not add fields that are not in the schema, even if found in the CV.
+
+
+here is the cv:" + CVTextArg +"
+
+
+FOLLOW THIS JSON SCHEMA:
+{
+  cvData: {
+    personalInfo: {
+      firstName: string,
+      lastName: string,
+      fullName: string,
+      email: string,
+      phone: string,
+      location: {
+        addressLine1: string | null,
+        city: string,
+        stateProvince: string | null,
+        postalCode: string | null,
+        country: string
+      },
+      websiteUrl: string | null,
+      linkedinUrl: string | null
+    },
+    summary: string | null,
+    workExperience: [
+      {
+        jobTitle: string,
+        companyName: string,
+        companyWebsite: string | null,
+        location: string,
+        startDate: string,
+        endDate: string | null,
+        isCurrent: boolean,
+        description: string | null,
+        responsibilities: [
+          string
+        ]
+      }
+    ],
+    education: [
+      {
+        institutionName: string,
+        location: string,
+        degree: string,
+        fieldOfStudy: string,
+        startDate: string | null,
+        endDate: string,
+        isCurrent: boolean,
+        gpa: number | string | null,
+        description: string | null
+      }
+    ],
+    skills: {
+      technical: [
+        {
+          skillName: string,
+          yearsExperience: number | null
+        }
+      ],
+      soft: [
+        string
+      ],
+      languages: [
+        {
+          language: string,
+          proficiency: string
+        }
+      ],
+      other: [
+         string
+      ]
+    },
+    projects: [
+      {
+        projectName: string,
+        description: string,
+        technologiesUsed: [
+          string
+        ],
+        projectUrl: string | null,
+        startDate: string | null,
+        endDate: string | null
+      }
+    ],
+    certifications: [
+      {
+        certificationName: string,
+        issuingAuthority: string,
+        issueDate: string | null,
+        expirationDate: string | null,
+        credentialId: string | null,
+        url: string | null
+      }
+    ],
+    publicationsPresentations: [
+        {
+            title: string,
+            type: string,
+            venue: string,
+            date: string,
+            urlOrDoi: string | null
+        }
+    ],
+    awardsHonors: [
+        {
+            awardName: string,
+            issuer: string,
+            dateReceived: string
+        }
+    ],
+    referencesAvailable: boolean | string
+  },
+  metadata: {
+    schemaVersion: 1.1.0,
+    extractionTimestamp: string,
+    sourceFileName: string | null
+  }
+}
+
+ONLY SEND THE JSON WITH NO MARKUP OR ANY OTHER MESSAGES
+DONT SEND INTRO MESSAGE OR CONCLUSION MESSAGE
+""}]}"]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" Body="[requestBody]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://openrouter.ai/api/v1/chat/completions" sap:VirtualizedContainerService.HintSize="433.6,103.2" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="POST" Result="[jsonResponse]" TimeoutMS="6000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Cookies>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Cookies>
+      <ui:HttpClient.Headers>
+        <InArgument x:TypeArguments="x:String" x:Key="Content-Type">application/json</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Authorization">Bearer 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</InArgument>
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <InArgument x:TypeArguments="x:String" x:Key="Parameters">POST</InArgument>
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="433.6,122.4" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_2" JsonObject="[parsedResponse]" JsonString="[jsonResponse]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[parsedResponse(&quot;choices&quot;)(0)(&quot;message&quot;)(&quot;content&quot;).ToString()]" />
   </Sequence>
 </Activity>

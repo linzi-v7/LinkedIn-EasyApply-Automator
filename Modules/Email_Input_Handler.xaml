@@ -160,7 +160,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Email_Input_Handler" sap:VirtualizedContainerService.HintSize="829.6000000000001,2920" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Email_Input_Handler" sap:VirtualizedContainerService.HintSize="902.4000000000001,3096" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="numOfApplications" />
       <Variable x:TypeArguments="x:String" Name="jobKeyword" />
@@ -180,7 +180,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" FreeTextFilter="{x:Null}" Length="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="All Mail" BrowserFolderId="msgfolderroot" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="504,2896.8" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_2" Importance="Any" IncludeSubfolders="False" MarkAsRead="True" MaxResults="10" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="True" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="True">
+    <umam:ForEachEmailConnections ConnectionAccountName="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" FreeTextFilter="{x:Null}" Length="{x:Null}" Mailbox="{x:Null}" ManualEntryFolder="{x:Null}" AuthScopesInvalid="False" BodyAsHtml="False" BrowserFolder="All Mail" BrowserFolderId="msgfolderroot" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="For Each Email" FilterSelectionMode="ConditionBuilder" sap:VirtualizedContainerService.HintSize="504,3072.8" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_2" Importance="Any" IncludeSubfolders="False" MarkAsRead="True" MaxResults="10" OrderByDate="NewestFirst" SelectionMode="Browse" UnreadOnly="True" UseConnectionService="True" UseSharedMailbox="False" WithAttachmentsOnly="True">
       <umam:ForEachEmailConnections.Body>
         <ActivityAction x:TypeArguments="umm:Office365Message, x:Int32">
           <ActivityAction.Argument1>
@@ -189,7 +189,7 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,2614.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,2790.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="jobInfo" />
               <Variable x:TypeArguments="x:String" Name="TextToRight" />
@@ -256,7 +256,7 @@
                 <InArgument x:TypeArguments="x:String">[CurrentEmail.SenderAddress]</InArgument>
               </Assign.Value>
             </Assign>
-            <umam:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" NewSubject="{x:Null}" ReplyAs="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Dear &lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;{0}&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Thank you for your &lt;/SPAN&gt;&lt;SPAN&gt;automation request &lt;/SPAN&gt;&lt;SPAN&gt;submission. We confirm receipt of the following details:&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Job Keyword: &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Number Of Applications: &lt;/SPAN&gt;&lt;SPAN&gt;{2}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Parsed CV Text: &lt;/SPAN&gt;&lt;SPAN&gt;{3}&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Your request is currently being processed. You will receive a completion report via email once processing is finished.&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;Should you require any assistance, please don&amp;#39;t hesitate to contact our support team.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Best Regards,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;BR/&gt;&lt;SPAN&gt;Automation Team&lt;/SPAN&gt;&lt;/P&gt;&quot;, CurrentEmail.Sender.DisplayName.ToString, jobKeyword, numOfApplications.ToString, CVText)]" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="Reply to Email" Email="[CurrentEmail]" sap:VirtualizedContainerService.HintSize="468.8,478.4" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_1" Importance="Normal" PreferredTimezone="UTC" ReplyToAll="True" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
+            <umam:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" NewSubject="{x:Null}" ReplyAs="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Dear &lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;{0}&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Thank you for your &lt;/SPAN&gt;&lt;SPAN&gt;automation request &lt;/SPAN&gt;&lt;SPAN&gt;submission. We confirm receipt of the following details:&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Job Keyword: &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Number Of Applications: &lt;/SPAN&gt;&lt;SPAN&gt;{2}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Parsed CV Text: &lt;/SPAN&gt;&lt;SPAN&gt;{3}&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Your request is currently being processed. You will receive a completion report via email once processing is finished.&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;Should you require any assistance, please don&amp;#39;t hesitate to contact our support team.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Best Regards,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;BR/&gt;&lt;SPAN&gt;Automation Team&lt;/SPAN&gt;&lt;/P&gt;&quot;, CurrentEmail.Sender.DisplayName.ToString, jobKeyword, numOfApplications.ToString, CVText)]" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="Reply to Email" Email="[CurrentEmail]" sap:VirtualizedContainerService.HintSize="468.8,487.2" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_1" Importance="Normal" PreferredTimezone="UTC" ReplyToAll="True" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
               <umam:ReplyToEmailConnections.AttachmentsBackup>
                 <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
                   <usau:BackupSlot.BackupValues>
@@ -276,6 +276,11 @@
                 </umamm:MailboxArgument>
               </umam:ReplyToEmailConnections.MailboxArg>
             </umam:ReplyToEmailConnections>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LLM_API_Request - Invoke Workflow File (Modules\LLM_API_Request.xaml)" sap:VirtualizedContainerService.HintSize="468.8,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Modules\LLM_API_Request.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="CVTextArg">[CVText]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </umam:ForEachEmailConnections.Body>
