@@ -9,7 +9,8 @@
     "UiPath.MicrosoftOffice365.Activities": "[3.0.14]",
     "UiPath.PDF.Activities": "[3.22.1]",
     "UiPath.System.Activities": "[25.2.4]",
-    "UiPath.UIAutomation.Activities": "[24.10.12]"
+    "UiPath.UIAutomation.Activities": "[24.10.12]",
+    "UiPath.WebAPI.Activities": "[1.21.1]"
   },
   "webServices": [],
   "entitiesStores": [],
