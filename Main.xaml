@@ -115,7 +115,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="902.4000000000001,1412" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="902.4000000000001,1456" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="emailList">
         <sap:WorkflowViewStateService.ViewState>
@@ -191,13 +191,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </umam:GetEmailListConnections>
-    <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="all processing happen here. most module calls would be here" DisplayName="For Each currentEmail" sap:VirtualizedContainerService.HintSize="468.8,1074.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emailList]">
+    <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="all processing happen here. most module calls would be here" DisplayName="For Each currentEmail" sap:VirtualizedContainerService.HintSize="468.8,1118.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emailList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="umm:Office365Message">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="umm:Office365Message" Name="currentEmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,921.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,965.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strJobKeyword" />
               <Variable x:TypeArguments="x:String" Name="strPrompt" />
@@ -224,7 +224,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MessageBox>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="prompt need to have &quot;&quot; and &quot;&quot; at the end along with the &quot; for the string variable." sap:VirtualizedContainerService.HintSize="433.6,159.2" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strPrompt]</OutArgument>
               </Assign.To>
@@ -371,6 +371,11 @@ DONT SEND INTRO MESSAGE Or CONCLUSION MESSAGE
 ""
 "]</InArgument>
               </Assign.Value>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </Assign>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="" DisplayName="LLM_API_Request - Invoke Workflow File (Modules\LLM_API_Request.xaml)" sap:VirtualizedContainerService.HintSize="433.6,207.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Modules\LLM_API_Request.xaml">
               <ui:InvokeWorkflowFile.Arguments>

@@ -1,0 +1,266 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LinkedIn_SearchAndExtract" this:LinkedIn_SearchAndExtract.jobKeyword="web developer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="jobKeyword" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>LinkedIn_SearchAndExtract_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="902.4000000000001,2220.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="extractedData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Feed  LinkedIn" sap:VirtualizedContainerService.HintSize="483.2,2197.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1957.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="dataTableText" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Jobs'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/feed" CVScreenId="18bd773f-24cd-487d-bbee-2691646a6efe" ContentHash="FE3RWNko90ifGQkCLbnABA" CvTextArea="1024, 224, 31, 13" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="990, 182, 100, 65" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='                                                                                                      Jobs            ' tag='A' type='' class='vZAEfLfqLlKjBlZFJsdSpxkQeJIBredNIdHbSsqNQ  &amp;#xA;         global-nav__primary-link' check:innerText='Jobs' /&gt;" Guid="438e6d4f-31be-4324-8ccc-60a54783794e" InformativeScreenshot="ed23c06570644881b570448e0d286b38.png" Reference="APb3D8kHDUyuuOT2uOGFlA/46bQkitdvUql3HG5LsAwZw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Feed | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Text="[jobKeyword]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="b22558cc-0332-42b4-986a-8ddaa8a7c950" CvTextArea="349, 206, 169, 21" CvTextArgument="Title, skill or company" CvType="Text" DesignTimeRectangle="315, 195, 239, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='jobs-search-box-keyword-id-ember753' tag='INPUT' type='text' class='basic-input jobs-search-box__text-input jobs-search-box__keyboard-text-input jobs-search-global-typeahead__input' aaname='                                Search by title, skill, or company                                                                                  ' /&gt;" Guid="5537c87e-0119-46ac-8db1-7b50ba2ac5c3" InformativeScreenshot="b79d5daa3ab235cd83691c7ce10a9ca0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Search all Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="315, 195, 35, 40" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='jobs-search-box__input-icon&amp;#xA;                jobs-search-box__keywords-label&amp;#xA;                ' aaname='                                                            ' check:innerText='Search by title, skill, or company' /&gt;" Guid="7a165f8b-d1b4-423b-9297-c732c1c1840e" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="416,246.4" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V4">
+              <uix:NKeyboardShortcuts.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NKeyboardShortcuts.VerifyOptions>
+            </uix:NKeyboardShortcuts>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="3" DisplayName="Click 'Filter by Easy apply'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="832746cb-457e-4426-9539-24681c8a2c6c" CvElementArea="1040, 261, 133, 44" CvTextArea="1057, 274, 99, 23" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="1043, 263, 128, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='searchFilter_applyWithLinkedin' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="235cc9df-162e-4b7f-9d51-6c6cbe72cca1" InformativeScreenshot="1029716504b1b28498a2ff1fa38232a5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Search all Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="Button 'Button 'Easy Apply''" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Target>
+                    <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="db4b38a0-8698-41c7-8a46-f4b5b39e0e31" ContentHash="aX5pBkhweEWMj9lsYNIRSg" CvElementArea="367, 261, 135, 44" CvTextArea="385, 274, 100, 25" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="371, 263, 128, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='searchFilter_applyWithLinkedin' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice artdeco-pill--selected ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="28ac9a4f-b325-4805-bb8b-8a0044a79f1e" InformativeScreenshot="cdc82c28eb8c8fef07a6dbcc4f8c9022.png" Reference="APb3D8kHDUyuuOT2uOGFlA/Oq7AU7NPX0iNCkwW1lGIeg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(34) web developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CVScreenId="db4b38a0-8698-41c7-8a46-f4b5b39e0e31" CvTextArea="267, 274, 42, 18" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 263, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="abd906af-68dd-490f-b709-7af977744520" SearchSteps="FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:VerifyExecutionOptions.Target>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NHover DisplayName="Hover 'ArrowButton'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V4">
+              <uix:NHover.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="5ab459a5-4046-42f2-977f-abb17f7bda79" ContentHash="CxlbO2gdOEK-pt9CD9BdlQ" CvElementArea="861, 1007, 25, 22" CvType="ArrowButton" DesignTimeRectangle="862, 1006, 24, 22" DesignTimeScaleFactor="1.25" ElementType="ArrowButton" Guid="0fcbc590-b79f-4f27-a935-c70a9f4e9eee" InformativeScreenshot="e1c8f58650fb30781339ac6c8a138be8.png" Reference="APb3D8kHDUyuuOT2uOGFlA/YV7aYutBVEu7wkPLpYcptg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(34) web developer Jobs | LinkedIn' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="5ab459a5-4046-42f2-977f-abb17f7bda79" CvElementArea="862, 398, 23, 23" CvType="ArrowButton" DesignTimeRectangle="862, 398, 23, 23" ElementType="ArrowButton" Guid="213e72b4-61fa-4092-9f0b-562c230eebfc" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                      <uix:Target CVScreenId="5ab459a5-4046-42f2-977f-abb17f7bda79" CvTextArea="267, 274, 42, 18" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 263, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="a79d2cf2-14a6-4169-9be0-847b5bfed598" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NHover.Target>
+              <uix:NHover.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NHover.VerifyOptions>
+            </uix:NHover>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="416,270.4" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V4">
+              <uix:NMouseScroll.SearchedElement>
+                <uix:SearchedElement>
+                  <uix:SearchedElement.Target>
+                    <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="3829f592-f67a-44d6-b680-d418c3e80895" ContentHash="u2qzhg49r0qBqfJL43vLpQ" CvTextArea="490, 967, 322, 16" CvTextArgument="1 2 3 ... Next" CvType="Text" DesignTimeRectangle="255, 933, 610, 81" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' parentid='jobs-search-results-footer' tag='DIV' class='jobs-search-pagination jobs-search-results-list__pagination p4' aaname='                                       ' check:innerText='1&amp;#xA;2&amp;#xA;3&amp;#xA;…&amp;#xA;Next' /&gt;" Guid="ebf8e29a-bf5f-4292-b4d7-5c1be689e209" InformativeScreenshot="001175ec2d7cd540072b7470acd7d2f2.png" Reference="APb3D8kHDUyuuOT2uOGFlA/Zlg93Z9sZE-5nlOqEJzZyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(34) web developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CVScreenId="3829f592-f67a-44d6-b680-d418c3e80895" CvTextArea="267, 274, 42, 18" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 263, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="12a3dd6a-e589-4648-a7ea-684a02f47eee" SearchSteps="FuzzySelector, CV" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:SearchedElement.Target>
+                  <uix:SearchedElement.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:SearchedElement.Timeout>
+                </uix:SearchedElement>
+              </uix:NMouseScroll.SearchedElement>
+            </uix:NMouseScroll>
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[extractedData]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='New column 1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='New column 2 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column0' attr='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V4">
+              <uix:NExtractData.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4187680348&amp;geoId=106155005&amp;keywords=web%20developer&amp;origin=JOB_SEARCH_PAGE_SEARCH_BUTTON&amp;refresh=true" DesignTimeRectangle="255, -2964, 610, 4044" DesignTimeScaleFactor="1.25" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='main' tag='UL' /&gt;" Guid="42c9519d-47c7-475e-bfee-c83639bb4957" InformativeScreenshot="469dab9a147e3827dbf489293712c6b5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='web developer Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+              </uix:NExtractData.Target>
+            </uix:NExtractData>
+            <ui:OutputDataTable DataTable="[extractedData]" DisplayName="Output Data Table as Text" sap:VirtualizedContainerService.HintSize="416,112.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dataTableText]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416,115.2" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[dataTableText]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="C4jt7hY3T0WuJYFVIikZBA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALZSURBVFhH7VffS1NhGD6zZduRujEpUAvCugm66KbLoKuulbooCNLO2S5aoZIGRUJU5kV3GVJ/gQVFNYRIaueI82dLCq2b1C2z0JmliVvNPfF821lzbnPYjnjhCw/nO+/3ve/7fN/7/eCVpI0gdkUjCmRFL5FVvcxkFMtO3SI79Hhwh0cqPN9hsat6lazqPlnVP5uMPlnVq7a4XlpsTo8kyapOFMc7sE7gRLnaCQJcGrJLDLIrOrad0wTYTuPkf8BYjJmeAAOW13lxsnVYYG99T75JZCbAQHvqe9DeN4WF8BIWwhG090+hvC6vJDIT4JKfaB3Gr1AEhrBNHfvSOFsLNjCBWP6NFEREGpgCpmVdUkAwEDceZ01wQ+YS3B63zWFsdgKEtUZDwVmPwNYaTTinnmngvwEjIPXbnV3YdaEbJa7uxNg0wbMToDM6ufxoFLfcfgG2qaPD43feodkdwM3nfjQ9GcehqwPYfdGLU20jeOCZxIv3M3APBXHb7ceR629QtDJ4dgI2Rcf+xj5MfA8lNiHb1FmrPSKwIfOLEVx7PIanvmmxX5IlCmBsehFn7n9AkcMkAr8jUXz7GUaU0TKIP7iIo81vYVuejvwQMCSyFEVgJgTf+HyMUEr/vVdfsMPZZQ6B8J8l3O2cwOGmQZTV9uBYyxD6R+eWjRkcm0u9SfNHwPNxFqW1XhTGHy2ejNNtI+L+MMQfDKGioVf4zjuBlo7AsuNmUzQcvDKArz/CK+xNIXDj2biY9T8COioa0tuvG4FM9psENgnkTGDfpV5xeUzOhgTYps5araHx4Sdx29Epv/wvTCGQyT4nAgSfVRqQNcE2dXyS+fIdiOv55StpPNWr2SeNyU7AmEkyDD1vu2R9avDV7DMRYJHAYiF1oFlgEcRiSJJYHlldnRa7qlXGO8jOTPhkVau01r222J1arD6UVY0okBWNrLg0a0XpqlC0nSyEWRBvCPkL503cP2RijC4AAAAASUVORK5CYII=" InformativeScreenshot="7141c80b47fa59cfe9101c2061b9ab36.jpg" Reference="APb3D8kHDUyuuOT2uOGFlA/0vOdHHGJCEWk7cx1w7cxaQ" Selector="&lt;html app='chrome.exe' title='(34) Feed | LinkedIn' /&gt;" Title="(34) Feed | LinkedIn" Url="https://www.linkedin.com/feed/" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
