@@ -49,6 +49,13 @@
       <x:String>UiPath.UIAutomationNext.Models</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -112,7 +119,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="902.4000000000001,2220.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="902.4000000000001,2398.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="extractedData" />
     </Sequence.Variables>
@@ -121,13 +128,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Feed  LinkedIn" sap:VirtualizedContainerService.HintSize="483.2,2197.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Feed  LinkedIn" sap:VirtualizedContainerService.HintSize="483.2,2208" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="ed8897f3-d23b-4b61-a720-80f21d1382ac" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1957.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,1959.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dataTableText" />
             </Sequence.Variables>
@@ -196,7 +203,7 @@
                   <uix:VerifyExecutionOptions.Target>
                     <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="db4b38a0-8698-41c7-8a46-f4b5b39e0e31" ContentHash="aX5pBkhweEWMj9lsYNIRSg" CvElementArea="367, 261, 135, 44" CvTextArea="385, 274, 100, 25" CvTextArgument="Easy Apply" CvType="Button" DesignTimeRectangle="371, 263, 128, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='searchFilter_applyWithLinkedin' tag='BUTTON' type='button' class='artdeco-pill artdeco-pill--slate artdeco-pill--2 artdeco-pill--choice artdeco-pill--selected ember-view search-reusables__filter-pill-button' aaname='           Easy Apply        ' check:innerText='Easy Apply' /&gt;" Guid="28ac9a4f-b325-4805-bb8b-8a0044a79f1e" InformativeScreenshot="cdc82c28eb8c8fef07a6dbcc4f8c9022.png" Reference="APb3D8kHDUyuuOT2uOGFlA/Oq7AU7NPX0iNCkwW1lGIeg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(34) web developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="db4b38a0-8698-41c7-8a46-f4b5b39e0e31" CvTextArea="267, 274, 42, 18" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 263, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="abd906af-68dd-490f-b709-7af977744520" SearchSteps="FuzzySelector, CV" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
@@ -212,7 +219,7 @@
               <uix:NHover.Target>
                 <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="5ab459a5-4046-42f2-977f-abb17f7bda79" ContentHash="CxlbO2gdOEK-pt9CD9BdlQ" CvElementArea="861, 1007, 25, 22" CvType="ArrowButton" DesignTimeRectangle="862, 1006, 24, 22" DesignTimeScaleFactor="1.25" ElementType="ArrowButton" Guid="0fcbc590-b79f-4f27-a935-c70a9f4e9eee" InformativeScreenshot="e1c8f58650fb30781339ac6c8a138be8.png" Reference="APb3D8kHDUyuuOT2uOGFlA/YV7aYutBVEu7wkPLpYcptg" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(34) web developer Jobs | LinkedIn' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
                       <uix:Target CVScreenId="5ab459a5-4046-42f2-977f-abb17f7bda79" CvElementArea="862, 398, 23, 23" CvType="ArrowButton" DesignTimeRectangle="862, 398, 23, 23" ElementType="ArrowButton" Guid="213e72b4-61fa-4092-9f0b-562c230eebfc" SearchSteps="CV" TargetType="ComputerVisionBased" />
                       <uix:Target CVScreenId="5ab459a5-4046-42f2-977f-abb17f7bda79" CvTextArea="267, 274, 42, 18" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 263, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="a79d2cf2-14a6-4169-9be0-847b5bfed598" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
@@ -236,7 +243,7 @@
                   <uix:SearchedElement.Target>
                     <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="3829f592-f67a-44d6-b680-d418c3e80895" ContentHash="u2qzhg49r0qBqfJL43vLpQ" CvTextArea="490, 967, 322, 16" CvTextArgument="1 2 3 ... Next" CvType="Text" DesignTimeRectangle="255, 933, 610, 81" DesignTimeScaleFactor="1.25" FuzzySelectorArgument="&lt;webctrl type='' parentid='jobs-search-results-footer' tag='DIV' class='jobs-search-pagination jobs-search-results-list__pagination p4' aaname='                                       ' check:innerText='1&amp;#xA;2&amp;#xA;3&amp;#xA;…&amp;#xA;Next' /&gt;" Guid="ebf8e29a-bf5f-4292-b4d7-5c1be689e209" InformativeScreenshot="001175ec2d7cd540072b7470acd7d2f2.png" Reference="APb3D8kHDUyuuOT2uOGFlA/Zlg93Z9sZE-5nlOqEJzZyQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(34) web developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                           <uix:Target CVScreenId="3829f592-f67a-44d6-b680-d418c3e80895" CvTextArea="267, 274, 42, 18" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 263, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="12a3dd6a-e589-4648-a7ea-684a02f47eee" SearchSteps="FuzzySelector, CV" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
@@ -262,5 +269,10 @@
         <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="C4jt7hY3T0WuJYFVIikZBA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALZSURBVFhH7VffS1NhGD6zZduRujEpUAvCugm66KbLoKuulbooCNLO2S5aoZIGRUJU5kV3GVJ/gQVFNYRIaueI82dLCq2b1C2z0JmliVvNPfF821lzbnPYjnjhCw/nO+/3ve/7fN/7/eCVpI0gdkUjCmRFL5FVvcxkFMtO3SI79Hhwh0cqPN9hsat6lazqPlnVP5uMPlnVq7a4XlpsTo8kyapOFMc7sE7gRLnaCQJcGrJLDLIrOrad0wTYTuPkf8BYjJmeAAOW13lxsnVYYG99T75JZCbAQHvqe9DeN4WF8BIWwhG090+hvC6vJDIT4JKfaB3Gr1AEhrBNHfvSOFsLNjCBWP6NFEREGpgCpmVdUkAwEDceZ01wQ+YS3B63zWFsdgKEtUZDwVmPwNYaTTinnmngvwEjIPXbnV3YdaEbJa7uxNg0wbMToDM6ufxoFLfcfgG2qaPD43feodkdwM3nfjQ9GcehqwPYfdGLU20jeOCZxIv3M3APBXHb7ceR629QtDJ4dgI2Rcf+xj5MfA8lNiHb1FmrPSKwIfOLEVx7PIanvmmxX5IlCmBsehFn7n9AkcMkAr8jUXz7GUaU0TKIP7iIo81vYVuejvwQMCSyFEVgJgTf+HyMUEr/vVdfsMPZZQ6B8J8l3O2cwOGmQZTV9uBYyxD6R+eWjRkcm0u9SfNHwPNxFqW1XhTGHy2ejNNtI+L+MMQfDKGioVf4zjuBlo7AsuNmUzQcvDKArz/CK+xNIXDj2biY9T8COioa0tuvG4FM9psENgnkTGDfpV5xeUzOhgTYps5araHx4Sdx29Epv/wvTCGQyT4nAgSfVRqQNcE2dXyS+fIdiOv55StpPNWr2SeNyU7AmEkyDD1vu2R9avDV7DMRYJHAYiF1oFlgEcRiSJJYHlldnRa7qlXGO8jOTPhkVau01r222J1arD6UVY0okBWNrLg0a0XpqlC0nSyEWRBvCPkL503cP2RijC4AAAAASUVORK5CYII=" InformativeScreenshot="7141c80b47fa59cfe9101c2061b9ab36.jpg" Reference="APb3D8kHDUyuuOT2uOGFlA/0vOdHHGJCEWk7cx1w7cxaQ" Selector="&lt;html app='chrome.exe' title='(34) Feed | LinkedIn' /&gt;" Title="(34) Feed | LinkedIn" Url="https://www.linkedin.com/feed/" Version="V1" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_EasyApply - Invoke Workflow File (Modules\LinkedIn_EasyApply.xaml)" sap:VirtualizedContainerService.HintSize="483.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LinkedIn_EasyApply.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="jobsDataTable">[extractedData]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>

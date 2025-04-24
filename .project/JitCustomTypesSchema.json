@@ -1,0 +1,54 @@
+{
+  "exportedBy": null,
+  "bundleHash": null,
+  "version": "1.0.0.0",
+  "jitAssemblyCompilerCommands": [
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "1561711998",
+        "bundleName": "fd1561711998",
+        "entitiesBundle": {
+          "Types": {
+            "FormData": {
+              "name": "FormData",
+              "properties": [
+                {
+                  "name": "WhatIsYourLevelOfProficiencyInEnglish",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "HowManyYearsOfWorkExperienceDoYouHaveWithAspNet",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "AreYouComfortableWorkingInAnOnsiteSetting",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "HowManyYearsOfWorkExperienceDoYouHaveWithAngular",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.UIAutomationNext.Activities.Design.SWEntities.fd1561711998",
+        "hash": "MTU2MTcxMTk5OA",
+        "assemblyName": "fd1561711998.42xRj24MiEE1HqP9118soCM4"
+      }
+    }
+  ]
+}

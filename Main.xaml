@@ -142,6 +142,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </Variable>
       <Variable x:TypeArguments="x:Int32" Name="intNumOfApplications" />
+      <Variable x:TypeArguments="njl:JObject" Name="LLMResponseJSON" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -201,7 +202,6 @@
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strJobKeyword" />
               <Variable x:TypeArguments="x:String" Name="strPrompt" />
-              <Variable x:TypeArguments="njl:JObject" Name="LLMResponseJSON" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
