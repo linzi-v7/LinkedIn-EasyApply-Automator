@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="LinkedIn_Apply" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="LinkedIn_Apply_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="LinkedIn_Apply" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="LinkedIn_Apply_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -25,6 +25,33 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.CV</x:String>
+      <x:String>UiPath.Shared.ObjectLibrary</x:String>
+      <x:String>UiPath.CV.Activities</x:String>
+      <x:String>UiPath.CV.Activities.Interfaces</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>DocumentFormat.OpenXml.Drawing.Charts</x:String>
+      <x:String>DocumentFormat.OpenXml</x:String>
+      <x:String>Microsoft.Office.Interop.Excel</x:String>
+      <x:String>UiPath.UIAutomationNext.API.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.API.Contracts</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -50,13 +77,231 @@
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>DocumentFormat.OpenXml</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.API</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_Apply" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_Apply" sap:VirtualizedContainerService.HintSize="1090,2848" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge LinkedIn Login, Sign in  LinkedIn" sap:VirtualizedContainerService.HintSize="1090,2825.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="af71c584-9650-4a21-a32f-c303dba2b3b1" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Do" sap:VirtualizedContainerService.HintSize="1056,2580" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="password" />
+              <Variable x:TypeArguments="x:String" Name="mail" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email or phone'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1022,301.3333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="af71c584-9650-4a21-a32f-c303dba2b3b1" Text="[mail]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/login" CVScreenId="c0fd660b-641b-46b6-bc45-c8e540054817" ContentHash="ErZlMe7LcE--QxEqibvyNA" CvElementArea="1001, 779, 551, 98" CvType="InputBox" DesignTimeRectangle="1004, 782, 548, 94" DesignTimeScaleFactor="1.8000000715255737" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='username' tag='INPUT' type='email' class='' aaname='           Email or phone         ' /&gt;" Guid="a854b6bc-295f-4c1c-909b-3cf8046d7fdb" InformativeScreenshot="746b18a722959149bfc235cdc20e809a.png" Reference="he2H0K538U-LmcsAmee0Yg/vIdqqj8W6ECAfpRgms4z2g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='LinkedIn Login, Sign in | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="c0fd660b-641b-46b6-bc45-c8e540054817" CvElementArea="1001, 779, 551, 98" CvType="InputBox" DesignTimeRectangle="1004, 782, 238, 69" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='form__label--floating' aaname='           Email or phone         ' check:innerText='Email or phone' /&gt;" Guid="cc6a0c53-1620-4ca1-89b9-e09ce45a726a" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1022,301.3333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="af71c584-9650-4a21-a32f-c303dba2b3b1" Text="[password]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/login" CVScreenId="2b39e5fb-faa2-4ddd-a4d7-97148d0c69a8" ContentHash="r3XlZ6jmp020cEtHpiT0lg" CvElementArea="1002, 917, 550, 98" CvType="InputBox" DesignTimeRectangle="1004, 919, 548, 94" DesignTimeScaleFactor="1.8000000715255737" ElementType="InputBoxPassword" FuzzySelectorArgument="&lt;webctrl id='password' tag='INPUT' type='password' class='' aaname='             Password         ' /&gt;" Guid="7016d386-d49b-4cd1-a0bd-f305acef90e0" InformativeScreenshot="7f746004582c82ec6039bcb2e10b1caa.png" Reference="he2H0K538U-LmcsAmee0Yg/JuV_ax2YXEaBOSkZJFzV0A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='LinkedIn Login, Sign in | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="2b39e5fb-faa2-4ddd-a4d7-97148d0c69a8" CvElementArea="1002, 917, 550, 98" CvType="InputBox" DesignTimeRectangle="1004, 919, 156, 68" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='             Password         ' tag='LABEL' type='' class='form__label--floating' check:innerText='Password' /&gt;" Guid="5cc22ddc-dd81-4456-9911-5375693f6147" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign in'" sap:VirtualizedContainerService.HintSize="1022,236" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="af71c584-9650-4a21-a32f-c303dba2b3b1" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/login" CVScreenId="418e528c-2ba2-4412-b34c-f275f30f7a3d" ContentHash="mAX2VuQkuk6nQjJpxLzJFw" CvElementArea="1000, 1166, 556, 102" CvTextArea="1230, 1203, 93, 34" CvTextArgument="Sign in" CvType="Button" DesignTimeRectangle="1004, 1171, 548, 94" DesignTimeScaleFactor="1.8000000715255737" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='btn__primary--large from__button--floating' aaname='               Sign in           ' check:innerText='Sign in' /&gt;" Guid="c9126ed4-c06c-478c-9539-3baef99e42be" InformativeScreenshot="a95c0ccdecd56e6139ccd2596826b378.png" Reference="he2H0K538U-LmcsAmee0Yg/RV8XFPx3e0qAi-mgrmdlLA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='LinkedIn Login, Sign in | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Search Home My Network …'" sap:VirtualizedContainerService.HintSize="1022,1646.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V4">
+              <uix:NCheckState.IfExists>
+                <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="518,1393.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge (6) Feed  LinkedIn" sap:VirtualizedContainerService.HintSize="484,1298.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="8a705740-c378-470d-808d-5982a0dc671f" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1050.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Default="software engineering" Name="jobRequired" />
+                            <Variable x:TypeArguments="x:String" Default="01200289322" Name="phoneNumber" />
+                            <Variable x:TypeArguments="x:String" Name="job" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,301.3333333333333" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="8a705740-c378-470d-808d-5982a0dc671f" Text="[jobRequired &amp; &quot; jobs&quot;]" Version="V4">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="linkedin.com/feed" CVScreenId="58997590-3199-4e12-8e7c-4406f881a9f2" ContentHash="tMv-qXxzhUqQZ-TGIk1CaQ" CvTextArea="420, 260, 75, 24" CvTextArgument="Search" CvType="Text" DesignTimeRectangle="350, 241, 504, 61" DesignTimeScaleFactor="1.8000000715255737" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='basic-input search-global-typeahead__input search-global-typeahead__input--nile-background&amp;#xA;            &amp;#xA;            ' placeholder='Search' aaname='' /&gt;" Guid="e43265ac-c13a-45b2-b8fd-dac90538fb58" InformativeScreenshot="c3320cb066fff2c7dc3d58aa7737f90b.png" Reference="he2H0K538U-LmcsAmee0Yg/ojdJq-_Dy0CR0bGvzr9Ksw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(6) Feed | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                            </uix:NTypeInto.Target>
+                            <uix:NTypeInto.VerifyOptions>
+                              <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                              </uix:VerifyExecutionTypeIntoOptions>
+                            </uix:NTypeInto.VerifyOptions>
+                          </uix:NTypeInto>
+                          <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="416,262" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V4">
+                            <uix:NKeyboardShortcuts.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NKeyboardShortcuts.VerifyOptions>
+                          </uix:NKeyboardShortcuts>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Filter by Easy apply'" sap:VirtualizedContainerService.HintSize="416,236" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a705740-c378-470d-808d-5982a0dc671f" Version="V4">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="linkedin.com/search/results/all" CVScreenId="c7baba05-ee64-493c-8ad2-2b98171f0115" ContentHash="06Udk1U2jkOGKGNtcU0eUQ" CvElementArea="894, 556, 187, 63" CvTextArea="920, 573, 137, 34" CvTextArgument="Easy apply" CvType="Button" DesignTimeRectangle="898, 559, 180, 58" DesignTimeScaleFactor="1.8000000715255737" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='                                        Filter by                                      Easy apply                 ' tag='A' type='button' class='FQrEAtfvSjbUKApCKOmfvUpdJrfSzUyuMTw  artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 reusable-search__entity-cluster--quick-filter-action' check:innerText='Filter by&amp;#xA;Easy apply' /&gt;" Guid="2b7a7765-b7b4-4522-b7b8-4d451e0ba7a5" InformativeScreenshot="f33fe549f4dd06f9fb387a9c250abb7b.png" Reference="he2H0K538U-LmcsAmee0Yg/TUfsrRC0CUafsMBppsZDoQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='&amp;quot;software engineering jobs&amp;quot; | Search | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                          <uix:NExtractData AppendResults="False" ContinueOnError="True" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column4' Name='New column 1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='New column 2 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column4' attr='fulltext'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column0' attr='href'&gt;&lt;webctrl tag='li' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="416,188.66666666666666" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="8a705740-c378-470d-808d-5982a0dc671f" Version="V4">
+                            <uix:NExtractData.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=4182023376&amp;keywords=senior%20web%20developer%20jobs&amp;origin=BLENDED_SEARCH_RESULT_NAVIGATION_SEE_ALL&amp;originToLandingJobPostings=4211485294%2C4214619257%2C4182023376" ContentHash="xfOz8Kaook-DiR0fpR_RqQ" DesignTimeRectangle="263, -5435, 879, 6396" DesignTimeScaleFactor="1.8000000715255737" ElementType="List" FullSelectorArgument="&lt;webctrl parentid='main' tag='UL' /&gt;" Guid="63542a92-5e78-4df7-a6a2-3793c340e459" InformativeScreenshot="469dab9a147e3827dbf489293712c6b5.png" Reference="he2H0K538U-LmcsAmee0Yg/6FPNXuM5h0yf4wxT-TpzYQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='senior web developer jobs Jobs | LinkedIn' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                            </uix:NExtractData.Target>
+                          </uix:NExtractData>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-11, -11, 2582, 1390" BrowserType="Edge" ContentHash="D9uz6FsqzkmAJgJUtLPcog" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAALiSURBVFhH7VfNaxNBFN/UGJMUvdSi0Kog1YvgwYtHwZPnFj0oCFbT5GCUVmwFxYKotQdvKqJ/QRUUNRTEotmVpk1bY1H8uNh8WGtpU6utkkQ3ec5vshO3aTcNslty6IMfmX3zPn4zbzLDkypCXB4ZqHJ7lFp3i1JvMWrcPsXm9ipacm9QcpzstblalCY2GWH4bDHCDE1r/M9sTl9QktgHUKNN0AoBC8VuFwhga8CuYOTyKLTuhMyBsX7OBCAXci5NAAm3tIXo0M13HNvODJhNwpgAEm1lCXvCU/Qrk2VQqWdoihEylYQxAWz5Qbbqn2mVhGAMHeZgYwIqmEC+/qIEKi8DSoCyrEgJACTCwcOqARzIcpKzu4TblWFbmgBgPy5T1bEgx1o2RnDoUQZ8C4iE0K/3vaRNp/qp1t9fsNXH1MGYAIIhyLn7Y3Q1EOfAGDoEPHD9DXUFEnTlSZw6H8Zo94Vh2nw6RIdvv6e7wQl6+naGAqNJusb89l56RdWLk5cm4GQEdnSEafxbWjuCxMfQ2ZuDPLGQ+ZRKFx9E6VFkmp8XveQYotMpOnrnA1V7LSLwW83R5I8M5ZDNQOLJFO3rek3OheUwh4AQNZujxEyaIrH5PCFNL+TW8y+0gZ0PxNdgHoHMnyzd6BunPZ0jVN86QPu7R2lobE6bzctIdK74JjWPQPDjLNW1hsjBthgJ8M84wg4k7g8h8WSaGtoHeWzk0HKZQ6C7N7Hg7+b0yLTr/DB9/Z7RLP75W0Lg8uMYXzV8hX9D+9L+K0bAyH+VwCqBsglsPzvIL4+J2TQHxtDZm2XquPeJ33YIil98O4oIGPmXRQDAswoHsAYwhg5PMl6+nZoev3glxVO9nL/OpjQBAGz1EHrcdnp9cXIBvQ1QNL+IAJoENAvFhlYBTRCaIUlCe2T397HWTG7UJsDOSrCFyo32thc2l0/O94dMAbDmVAYrbM3/om5ZeOSNaITREFeASNJf503cP1oKQCkAAAAASUVORK5CYII=" InformativeScreenshot="e074738f40290daeb35c1a3ac02d3844.jpg" Reference="he2H0K538U-LmcsAmee0Yg/FWtc-TYXU0uSmYRdbUjfEA" Selector="&lt;html app='msedge.exe' title='(6) Feed | LinkedIn' /&gt;" Title="(6) Feed | LinkedIn" Url="https://www.linkedin.com/feed/" Version="V1" />
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,242" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;the email and password entered not correct please resend the correct ones&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="linkedin.com/feed" ContentHash="9G_15OuFG0KzMuy50R2jnQ" DesignTimeRectangle="276, 225, 2031, 94" DesignTimeScaleFactor="1.8000000715255737" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl parentid='global-nav' tag='DIV' type='' class='global-nav__content' aaname='                                                       ' /&gt;" Guid="c208624d-605f-4075-8291-f6bcb9563cc4" InformativeScreenshot="ef4b597acd71849704f6aa013123d6ab.png" Reference="he2H0K538U-LmcsAmee0Yg/cFqz4Ydi7U2yhIp_yv4gVw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='(6) Feed | LinkedIn' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 2582, 1390" BrowserType="Edge" ContentHash="djQERH-hLkmrzIgY3Lymqg" IconBase64="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" InformativeScreenshot="85268faa7abd0122ce3c832272c449df.jpg" Reference="he2H0K538U-LmcsAmee0Yg/eJ0B8Qj_pUutvGfIuCmFKQ" Selector="&lt;html app='msedge.exe' title='LinkedIn Login, Sign in | LinkedIn' /&gt;" Title="LinkedIn Login, Sign in | LinkedIn" Url="https://www.linkedin.com/login" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
