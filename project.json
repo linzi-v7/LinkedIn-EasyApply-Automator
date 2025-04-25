@@ -4,6 +4,7 @@
   "description": "LinkedIn Easy Apply Automation, Software Requirements Engineering Project",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Excel.Activities": "[3.0.1]",
     "UiPath.IntegrationService.Activities": "[1.14.0]",
     "UiPath.Mail.Activities": "[2.0.11]",
     "UiPath.MicrosoftOffice365.Activities": "[3.0.14]",
