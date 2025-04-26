@@ -115,7 +115,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="902.4000000000001,1456" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="902.4000000000001,1632" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(umm:Office365Message)" Name="emailList">
         <sap:WorkflowViewStateService.ViewState>
@@ -192,13 +192,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </umam:GetEmailListConnections>
-    <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="all processing happen here. most module calls would be here" DisplayName="For Each currentEmail" sap:VirtualizedContainerService.HintSize="468.8,1118.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emailList]">
+    <ui:ForEach x:TypeArguments="umm:Office365Message" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="all processing happen here. most module calls would be here" DisplayName="For Each currentEmail" sap:VirtualizedContainerService.HintSize="468.8,1294.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[emailList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="umm:Office365Message">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="umm:Office365Message" Name="currentEmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,965.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,1141.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strJobKeyword" />
               <Variable x:TypeArguments="x:String" Name="strPrompt" />
@@ -236,8 +236,10 @@ Instructions:
 Extract all technical skills along With their years Of experience.
 
 Infer years Of experience Where Not explicitly mentioned (e.g., From education, job titles, Or project dates).
-
+years of experience isnt equal to years of work experience.
+make fields for both.
 If experience duration Is Not clear, Default To 1 year.
+if experience duration cannot be possibly predicted, default to 0 years.
 
 Include implicit experience (e.g., tools Or technologies used In job descriptions Or personal projects, even If Not listed In a skills section).
 
@@ -253,117 +255,22 @@ here Is the cv:" + strCVText +"
 
 FOLLOW THIS JSON SCHEMA:
 {
-  cvData: {
-    personalInfo: {
-      firstName: String,
-      lastName: String,
-      fullName: String,
-      email: String,
-      phone: String,
-      location: {
-        addressLine1: String | null,
-        city: String,
-        stateProvince: String | null,
-        postalCode: String | null,
-        country: String
-      },
-      websiteUrl: String | null,
-      linkedinUrl: String | null
-    },
-    summary: String | null,
-    workExperience: [
-      {
-        jobTitle: String,
-        companyName: String,
-        companyWebsite: String | null,
-        location: String,
-        startDate: String,
-        endDate: String | null,
-        isCurrent: Boolean,
-        description: String | null,
-        responsibilities: [
-          String
-        ]
-      }
-    ],
-    education: [
-      {
-        institutionName: String,
-        location: String,
-        degree: String,
-        fieldOfStudy: String,
-        startDate: String | null,
-        endDate: String,
-        isCurrent: Boolean,
-        gpa: number | String | null,
-        description: String | null
-      }
-    ],
-    skills: {
-      technical: [
-        {
-          skillName: String,
-          yearsExperience: number | null
-        }
-      ],
-      soft: [
-        String
-      ],
-      languages: [
-        {
-          language: String,
-          proficiency: String
-        }
-      ],
-      other: [
-         String
-      ]
-    },
-    projects: [
-      {
-        projectName: String,
-        description: String,
-        technologiesUsed: [
-          String
-        ],
-        projectUrl: String | null,
-        startDate: String | null,
-        endDate: String | null
-      }
-    ],
-    certifications: [
-      {
-        certificationName: String,
-        issuingAuthority: String,
-        issueDate: String | null,
-        expirationDate: String | null,
-        credentialId: String | null,
-        url: String | null
-      }
-    ],
-    publicationsPresentations: [
-        {
-            title: String,
-            type: String,
-            venue: String,
-            Date: String,
-            urlOrDoi: String | null
-        }
-    ],
-    awardsHonors: [
-        {
-            awardName: String,
-            issuer: String,
-            dateReceived: String
-        }
-    ],
-    referencesAvailable: Boolean | String
-  },
-  metadata: {
-    schemaVersion: 1.1.0,
-    extractionTimestamp: String,
-    sourceFileName: String | null
-  }
+name: Jane Doe,
+email: jane.doe@email.com,
+phone: 123-456-7890,
+skills: [
+{ skill: UiPath, yearsOfExperience: 2, yearsOfWorkExperience: 4 },
+{ skill: Python, yearsOfExperience: 4, yearsOfWorkExperience: 4 },
+{ skill: Project Management, yearsOfExperience: 2, yearsOfWorkExperience: 4 },
+{ skill: Data Analysis, yearsOfExperience: 2, yearsOfWorkExperience: 4 }
+],
+experience: [
+{ title: RPA Developer, company: Tech Corp, duration: 2022-Present },
+{ title: Analyst, company: Data Inc, duration: 2020-2022 }
+],
+education: [
+{ degree: BSc Computer Science, institution: State University, grad_year: 2020 }
+]
 }
 
 ONLY SEND THE JSON With NO MARKUP Or ANY OTHER MESSAGES
@@ -388,13 +295,18 @@ DONT SEND INTRO MESSAGE Or CONCLUSION MESSAGE
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:InvokeWorkflowFile>
-            <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes (make sure data returns as intended, specifically the JSON output)" DisplayName="Write Text File" FileName="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop) &amp; &quot;\Untitled.txt&quot;]" sap:VirtualizedContainerService.HintSize="433.6,201.6" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[LLMResponseJSON(&quot;choices&quot;)(0)(&quot;message&quot;)(&quot;content&quot;).ToString()]">
+            <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes (make sure data returns as intended, specifically the JSON output)" DisplayName="Write Text File" FileName="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop) &amp; &quot;\Untitled.txt&quot;]" sap:VirtualizedContainerService.HintSize="433.6,210.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[LLMResponseJSON(&quot;choices&quot;)(0)(&quot;message&quot;)(&quot;content&quot;).ToString()]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:WriteTextFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_SearchAndExtract - Invoke Workflow File (Modules\LinkedIn_SearchAndExtract.xaml)" sap:VirtualizedContainerService.HintSize="433.6,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Modules\LinkedIn_SearchAndExtract.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="jobKeyword">[strJobKeyword]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>

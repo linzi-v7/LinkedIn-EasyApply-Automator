@@ -154,7 +154,7 @@
                 <InArgument x:TypeArguments="x:String">[currentJob(1).ToString()]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome New Tab" sap:VirtualizedContainerService.HintSize="483.2,693.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome New Tab" sap:VirtualizedContainerService.HintSize="483.2,693.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
