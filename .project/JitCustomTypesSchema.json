@@ -49,6 +49,53 @@
         "hash": "MTU2MTcxMTk5OA",
         "assemblyName": "fd1561711998.42xRj24MiEE1HqP9118soCM4"
       }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "0710532108",
+        "bundleName": "fd0710532108",
+        "entitiesBundle": {
+          "Types": {
+            "FormData": {
+              "name": "FormData",
+              "properties": [
+                {
+                  "name": "Email",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "PhoneCountryCode",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Phone",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "FollowRzainToStayUpToDateWithTheirPage",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.UIAutomationNext.Activities.Design.SWEntities.fd0710532108",
+        "hash": "MDcxMDUzMjEwOA",
+        "assemblyName": "fd0710532108.GvY0Y2UwWpA1UR9ZZ2oHQxH"
+      }
     }
   ]
 }
