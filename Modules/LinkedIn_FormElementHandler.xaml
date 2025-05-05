@@ -102,14 +102,14 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="920.8000000000001,578.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formChildren" />
+      <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formTextChildren" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:FindChildren Children="[formChildren]" DisplayName="Find Children" Filter="&lt;webctrl tag='DIV' class='artdeco-text-input--container ember-view' /&gt;" sap:VirtualizedContainerService.HintSize="417.6,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+    <ui:FindChildren Children="[formTextChildren]" DisplayName="Get TextInput Divs" Filter="&lt;webctrl tag='DIV' class='artdeco-text-input--container ember-view' /&gt;" sap:VirtualizedContainerService.HintSize="417.6,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
       <ui:FindChildren.Target>
         <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[formElementArg]" Id="98a337a9-c607-4d5f-9233-299e5863a122">
           <ui:Target.TimeoutMS>
@@ -121,7 +121,7 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="417.6,342.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formChildren]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="417.6,342.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
