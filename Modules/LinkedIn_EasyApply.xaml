@@ -143,6 +143,9 @@
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentJob" />
           </ActivityAction.Argument>
           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,2848.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="ui:UiElement" Name="currentTab" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -156,7 +159,7 @@
                 <InArgument x:TypeArguments="x:String">[currentJob(1).ToString()]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome New Tab" sap:VirtualizedContainerService.HintSize="520,2675.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome New Tab" sap:VirtualizedContainerService.HintSize="520,2675.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[currentTab]" ScopeGuid="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -228,6 +231,7 @@
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_FormElementHandler - Invoke Workflow File (Modules\LinkedIn_FormElementHandler.xaml)" sap:VirtualizedContainerService.HintSize="417.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LinkedIn_FormElementHandler.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
+                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="Dialog element contains the form with buttons like next or review/submit" DisplayName="Find Footer Button" FoundElement="[footerButtonElement]" sap:VirtualizedContainerService.HintSize="417.6,162.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
