@@ -1,6 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="LinkedIn_SearchAndExtract" this:LinkedIn_SearchAndExtract.jobKeyword="web developer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="jobKeyword" Type="InArgument(x:String)" />
+    <x:Property Name="CVText" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -118,9 +119,10 @@
       <AssemblyReference>System.Linq.Expressions</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>fd0710532108.GvY0Y2UwWpA1UR9ZZ2oHQxH</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="902.4000000000001,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="914.8000000000001,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="extractedData" />
     </Sequence.Variables>
@@ -220,7 +222,7 @@
               <uix:NMouseScroll.Target>
                 <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="d7ed5fbe-8b84-4782-94d9-e5d50ae4e329" ContentHash="6WTbtz0pNU-1IE4aHE_tbA" CvElementArea="821, 351, 26, 25" CvType="CloseButton" DesignTimeRectangle="815, 344, 40, 40" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='ember582' tag='BUTTON' type='button' class='job-card-container__action job-card-container__action-small artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--tertiary ember-view' aaname='                                                        ' /&gt;" Guid="126d4ada-616e-4324-aecf-042af0dac255" InformativeScreenshot="678e3f5f510c4378b17eb41d708d5b15.png" Reference="APb3D8kHDUyuuOT2uOGFlA/lPalAOFRu0e_N1hKhn6BEw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='web developer Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="d7ed5fbe-8b84-4782-94d9-e5d50ae4e329" CvTextArea="267, 209, 43, 20" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="255, 198, 95, 40" ElementType="Button" FuzzySelectorArgument="&lt;webctrl id='navigational-filter_resultType' tag='BUTTON' type='button' class='artdeco-dropdown__trigger artdeco-dropdown__trigger--placement-bottom ember-view artdeco-pill artdeco-pill--slate artdeco-pill--choice artdeco-pill--2 search-reusables__filter-pill-button artdeco-pill--selected cursor-pointer' aaname='         Jobs                             ' check:innerText='Jobs' /&gt;" Guid="921b086a-fdf9-4405-9afc-0fb7e21a997e" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -244,6 +246,7 @@
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_EasyApply - Invoke Workflow File (Modules\LinkedIn_EasyApply.xaml)" sap:VirtualizedContainerService.HintSize="483.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LinkedIn_EasyApply.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="jobsDataTable">[extractedData]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="CVText">[CVText]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

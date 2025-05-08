@@ -1,6 +1,7 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="LinkedIn_EasyApply" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="jobsDataTable" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="CVText" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -232,6 +233,7 @@
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
                               <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="CVText">[CVText]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="Dialog element contains the form with buttons like next or review/submit" DisplayName="Find Footer Button" FoundElement="[footerButtonElement]" sap:VirtualizedContainerService.HintSize="417.6,162.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
