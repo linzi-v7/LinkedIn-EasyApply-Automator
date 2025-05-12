@@ -119,9 +119,12 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,2316" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,2314.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formTextChildren" />
     </Sequence.Variables>
@@ -142,13 +145,13 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="571.2,2174.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="571.2,2172.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUiElement" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,2052.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,2051.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="textInputChildren" />
               <Variable x:TypeArguments="ui:UiElement" Name="inputArea" />
@@ -161,7 +164,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FindChildren sap2010:Annotation.AnnotationText="text/numeric input contains two children elements, &#xD;&#xA;[0] is label&#xD;&#xA;[1] is input" Children="[textInputChildren]" DisplayName="Find Children" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="536,178.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+            <ui:FindChildren sap2010:Annotation.AnnotationText="text/numeric input contains two children elements, &#xA;[0] is label&#xA;[1] is input" Children="[textInputChildren]" DisplayName="Find Children" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="536,178.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
               <ui:FindChildren.Target>
                 <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[currentUiElement]" Id="f3a568db-3bea-4aef-b627-316b927b83fc">
                   <ui:Target.TimeoutMS>
@@ -194,13 +197,13 @@
                 <InArgument x:TypeArguments="ui:UiElement">[textInputChildren.ElementAt(1)]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="536,1587.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="536,1585.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,1427.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,1425.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="inputAreaText" />
                       <Variable x:TypeArguments="x:String" Name="labelAreaText" />
@@ -211,49 +214,29 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="468.8,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" InUiElement="[inputArea]" Result="[inputAreaText]" Version="V4" />
-                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="468.8,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" InUiElement="[labelArea]" Result="[labelAreaText]" Version="V4" />
-                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="468.8,927.2" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="468.8,1144" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,688" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,904.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="Assign_3">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[LLMPrompt]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">["
-""You are a CV parsing expert. Answer The following question for the CV Provided.
-
-Instructions:
-years of experience isnt equal to years of work experience.
-if experience duration is impossible to infer, default to 0 years.
-Include implicit experience (e.g., tools Or technologies used In job descriptions Or personal projects, even If Not listed In a skills section).
-for questions that are general and not specific to CV, search for an answer on google, for example if the question is about expected salary,
-search the average monthly salary in the country (consider skill level and position) in the CV and return only THE NUMBER.
-
-- Respond ONLY with a NUMBER unless text is clearly required. 99.99% of answers should be numeric.
-
-here Is the cv:" + CVText +" here is the question label: " + labelAreaText + "
-
-
-ONLY SEND THE ANSWER With NO MARKUP Or ANY OTHER MESSAGES
-- DO NOT include any introduction, explanation, or conclusion.
-- DO NOT use any markup or formatting in your response.
-""
-"]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="433.6,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" InUiElement="[labelArea]" Result="[labelAreaText]" Version="V4" />
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[CVText]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">
-FARIS OSAMA SOFTWARE ENGINEER +20 112 311 1713 FARIS.OSAMA347@GMAIL.COM NEW CAIRO, EGYPT GITHUB.COM/LINZI-V7 LINKEDIN.COM/IN/FARIS-OSAMA CAREER OBJECTIVE Computer Science undergraduate specializing in Software Engineering with a strong interest in Web Development. Passionate about problem-solving, building responsive web applications, and continuously improving my skills. Seeking opportunities to contribute to real-world projects and enhance my experience in frontend and full-stack development. EDUCATION 2022 - PRESENT Ain Shams University Cairo, Egypt Faculty of Computer and Information Sciences Software Engineering Program • CGPA: 3.7 • Relevant Coursework: Data Structures, Algorithm Analysis &amp; Design, Object-Oriented Programming, Web Engineering, Structured Programming, Design Patterns, DBMS 2019 - 2022 El Rowad College Cairo, Egypt IGCSE Division • 8 O-Levels Including Computer Science and Information &amp; Communication Technology (ICT) • 2 AS-Levels Including Math and Physics. • Total Grade: 99% RELEVANT SKILLS • Programming Languages: C++, Java, Python, JavaScript • Web Development (Actively Learning): HTML, CSS, JavaScript • Databases: SQL (Oracle) • Tools &amp; Technologies: Git, Jira, draw.io, Microsoft Office • Soft Skills: Fast Learner, Efficient Problem Solver, Teamwork, Critical Thinking, Time Management PROJECTS • Icy Tower – Structured Programming Game (1st Year) o Technologies used: C++, SFML o Developed the collision detection system and main menu for the game. o Gained experience in teamwork and project planning during game development. • Food Management System – Object-Oriented Programming Project (2nd Year) o Technologies used: Javao Implemented a user management system for registration and authentication. o Contributed to order management and admin dashboard functionalities. • Pac-Man – Data Structures Project (2nd Year) o Technologies used: C++, SFML o Developed level maps using graph algorithms, improving pathfinding efficiency. Optimized leaderboard storage with BSTs, reducing retrieval time. o Designed and implemented collision detection using graph-based algorithms • Sound Packing – Algorithm Analysis Project (3 rd Year) o Technologies used: C++ o Designed and implemented an algorithm using dynamic programming to efficiently organize audio files into folders, optimizing storage. o Strengthened skills in algorithm design and complexity analysis. • Admin Dashboard – Frontend Development Project (Learning Project) o Technologies used: HTML, CSS o Designed and developed a visually appealing admin dashboard layout as part of The Odin Project curriculum. o Utilized CSS Grid for an efficient and flexible layout structure. o Enhanced UI design principles and gained hands-on experience in frontend styling. • The Odin Project – Full Stack Curriculum (In Progress) o Self-Paced Learning – https://www.theodinproject.com/ o Completed foundational modules in HTML, CSS, and basic JavaScript. o Currently 50% through the JavaScript module, with regular progress in concepts like DOM manipulation, event handling, asynchronous programming and dynamic UI behavior. o Built multiple hands-on projects including Admin Dashboard, Tic-Tac-Toe, Todo-List o All related projects are version-controlled and publicly available on GitHub. o Actively learning and applying new concepts through real-world web development challenges</InArgument>
+                              <InArgument x:TypeArguments="x:String">FARIS OSAMA SOFTWARE ENGINEER +20 112 311 1713 FARIS.OSAMA347@GMAIL.COM NEW CAIRO, EGYPT GITHUB.COM/LINZI-V7 LINKEDIN.COM/IN/FARIS-OSAMA CAREER OBJECTIVE Computer Science undergraduate specializing in Software Engineering with a strong interest in Web Development. Passionate about problem-solving, building responsive web applications, and continuously improving my skills. Seeking opportunities to contribute to real-world projects and enhance my experience in frontend and full-stack development. EDUCATION 2022 - PRESENT Ain Shams University Cairo, Egypt Faculty of Computer and Information Sciences Software Engineering Program • CGPA: 3.7 • Relevant Coursework: Data Structures, Algorithm Analysis &amp; Design, Object-Oriented Programming, Web Engineering, Structured Programming, Design Patterns, DBMS 2019 - 2022 El Rowad College Cairo, Egypt IGCSE Division • 8 O-Levels Including Computer Science and Information &amp; Communication Technology (ICT) • 2 AS-Levels Including Math and Physics. • Total Grade: 99% RELEVANT SKILLS • Programming Languages: C++, Java, Python, JavaScript • Web Development (Actively Learning): HTML, CSS, JavaScript • Databases: SQL (Oracle) • Tools &amp; Technologies: Git, Jira, draw.io, Microsoft Office • Soft Skills: Fast Learner, Efficient Problem Solver, Teamwork, Critical Thinking, Time Management PROJECTS • Icy Tower – Structured Programming Game (1st Year) o Technologies used: C++, SFML o Developed the collision detection system and main menu for the game. o Gained experience in teamwork and project planning during game development. • Food Management System – Object-Oriented Programming Project (2nd Year) o Technologies used: Javao Implemented a user management system for registration and authentication. o Contributed to order management and admin dashboard functionalities. • Pac-Man – Data Structures Project (2nd Year) o Technologies used: C++, SFML o Developed level maps using graph algorithms, improving pathfinding efficiency. Optimized leaderboard storage with BSTs, reducing retrieval time. o Designed and implemented collision detection using graph-based algorithms • Sound Packing – Algorithm Analysis Project (3 rd Year) o Technologies used: C++ o Designed and implemented an algorithm using dynamic programming to efficiently organize audio files into folders, optimizing storage. o Strengthened skills in algorithm design and complexity analysis. • Admin Dashboard – Frontend Development Project (Learning Project) o Technologies used: HTML, CSS o Designed and developed a visually appealing admin dashboard layout as part of The Odin Project curriculum. o Utilized CSS Grid for an efficient and flexible layout structure. o Enhanced UI design principles and gained hands-on experience in frontend styling. • The Odin Project – Full Stack Curriculum (In Progress) o Self-Paced Learning – https://www.theodinproject.com/ o Completed foundational modules in HTML, CSS, and basic JavaScript. o Currently 50% through the JavaScript module, with regular progress in concepts like DOM manipulation, event handling, asynchronous programming and dynamic UI behavior. o Built multiple hands-on projects including Admin Dashboard, Tic-Tac-Toe, Todo-List o All related projects are version-controlled and publicly available on GitHub. o Actively learning and applying new concepts through real-world web development challenges</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[LLMPrompt]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[String.Format("You are an AI assistant specialized in parsing CVs and answering job application questions based strictly on the provided CV text and the question. CV Text: {0} Application Question (from form label): {1} Your Task: Provide a direct answer to the application question based primarily on the information within the CV Text. Output Format Instructions (Follow CRITICALLY): Numerical Answers: If the question clearly implies a numerical answer (e.g., Years of experience?, Expected salary?, Notice period in weeks?, How many projects?), respond with ONLY THE NUMBER. No currency symbols, no units (e.g., years), no text, no explanations. Just the digits. Example: 5 or 65000. If inferring years of experience: Calculate based on dates. Include experience from job descriptions and personal projects mentioned in the CV. If duration is impossible to infer from the CV, output 0. If inferring years of experience and the skill is not mentioned in CV at all, respond with DATA_NOT_IN_CV. If the question is about expected salary, respond with the minimum wage in Egypt unless CV specifies an expected/desired salary. Yes/No Answers: If the question implies a Yes/No answer (e.g., Are you willing to relocate?, Do you have experience with X?), respond with ONLY Yes or No. Base the answer on information explicitly stated or strongly implied in the CV. If not clear, err on the side of what is presented or choose the most reasonable inference. If impossible to determine, respond DATA_NOT_IN_CV. Textual Answers (e.g., for motivation letter snippets, descriptions): If the question clearly asks for a descriptive textual answer (e.g., Describe your relevant experience, Why are you interested in this role?, Provide a short motivation statement), then provide a concise textual answer derived directly from the CV content. Keep the answer brief and relevant to the question. If an Answer Cannot Be Determined from the CV: If the question cannot be answered using the provided CV text, respond with DATA_NOT_IN_CV. Do not attempt to search externally or invent information. General Rules: NO MARKUP, NO EXTRA TEXT, BE LITERAL. Answer:", CVText, labelAreaText)]</InArgument>
                             </Assign.Value>
                           </Assign>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LLM_API_Request - Invoke Workflow File (Modules\LLM_API_Request.xaml)" sap:VirtualizedContainerService.HintSize="433.6,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LLM_API_Request.xaml">

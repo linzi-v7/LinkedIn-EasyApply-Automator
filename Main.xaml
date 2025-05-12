@@ -306,6 +306,7 @@ DONT SEND INTRO MESSAGE Or CONCLUSION MESSAGE
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="jobKeyword">[strJobKeyword]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="CVText">[strCVText]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="CVPath">[strCVPath]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
