@@ -124,7 +124,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,2314.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,2967.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formTextChildren" />
     </Sequence.Variables>
@@ -145,19 +145,20 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="571.2,2172.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="571.2,2825.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUiElement" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,2051.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,2704" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="textInputChildren" />
               <Variable x:TypeArguments="ui:UiElement" Name="inputArea" />
               <Variable x:TypeArguments="ui:UiElement" Name="labelArea" />
               <Variable x:TypeArguments="x:String" Name="LLMPrompt" />
               <Variable x:TypeArguments="njl:JObject" Name="LLMResponse" />
+              <Variable x:TypeArguments="x:String" Name="strResponse" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -197,13 +198,13 @@
                 <InArgument x:TypeArguments="ui:UiElement">[textInputChildren.ElementAt(1)]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="536,1585.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="536,2238.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,1425.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,2078.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="inputAreaText" />
                       <Variable x:TypeArguments="x:String" Name="labelAreaText" />
@@ -214,9 +215,9 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="468.8,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" InUiElement="[inputArea]" Result="[inputAreaText]" Version="V4" />
-                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="468.8,1144" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="468.8,1796.8" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,904.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1557.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -245,7 +246,38 @@
                               <InArgument x:TypeArguments="x:String" x:Key="strPrompt">[LLMPrompt]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="433.6,221.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InUiElement="[inputArea]" Text="[LLMResponse(&quot;choices&quot;)(0)(&quot;message&quot;)(&quot;content&quot;).ToString()]" Version="V4" />
+                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[strResponse]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">[LLMResponse("choices")(0)("message")("content").ToString()]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <If Condition="[strResponse = &quot;DATA_NOT_IN_CV&quot;]" sap:VirtualizedContainerService.HintSize="433.6,760.8" sap2010:WorkflowViewState.IdRef="If_3">
+                            <If.Then>
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,349.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382.4,176" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Fatal" Message="[&quot;DATA_NOT_IN_CV ERROR&quot;]" />
+                                <Throw Exception="[New Exception(&quot;DATA_NOT_IN_CV ERROR&quot;)]" sap:VirtualizedContainerService.HintSize="382.4,113.6" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,281.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="382.4,221.6" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InUiElement="[inputArea]" Text="[strResponse]" Version="V4" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
                         </Sequence>
                       </If.Then>
                       <If.Else>
