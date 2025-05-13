@@ -127,24 +127,37 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_EasyApply" sap:VirtualizedContainerService.HintSize="914.8000000000001,3071.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_EasyApply" sap:VirtualizedContainerService.HintSize="914.8000000000001,2036" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="sd:DataTable" Name="variable1" />
       <Variable x:TypeArguments="x:String" Name="currentJobLink" />
+      <Variable x:TypeArguments="sd:DataTable" Name="applicationsResult" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[jobsDataTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="622.4,92" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test1&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4206911264/?eBP=CwEAAAGWvIkhRitCkM6JKcfKPg03uHRoJQRDCFZ8XGzw-TCTVmDojts66_dXa7CMKRG3bAjm-CHWHas370tvMfHf0JdvWS6AFtHFlTNGC1PHLjmtLszcTJ2FoRGMpLYc_lS3jT0JZXyz4sika48rZZ9QWW27nvZldz0hZ1GCvOK2o4vFUtTrfKDcNjdKx_5jt1W2OzAikWf6eU_189k1odFSotxkjNjiBBE_OfcdAWsAsRCy33-Dd2KGjRxe2O6BinzkbyjVsDA7qUtyfS_ivmOPShXfq7l4_pFa9eIr_vPWanXVEjQftBjw4fcAUpe4m0-HsaTKO5ZasYWjSyUH3bJJKsmEOP_X5g2SVfBXS15rHH7kxvmxzTgr96d0qZo05XIak8_hCvFi90jraUCL6ZVxy0GUZ77VVzfyrA4XgKd2euZHYM0SKNhNKTsl1oHzfJnJ_mSWJObsStlpCHzppvMo43E-3RTiUw_fd6jyog&amp;amp;refId=FbOLamY2Wgow24CpHruQVw%3D%3D&amp;amp;trackingId=fOCVpaMILnKEFEj0moe83g%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test2&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4225672426/?eBP=CwEAAAGWxLJLzF24tukn53ba489hzBBsuNx8Q765S8jg5Mup8GvfBC_bS5s6X_CQskjWW2Iu1refT-O8-A8l-50RAXiy0ybi_mesmnyk_xu2LGRI2me6TfDA2W0Ur9wHVxN5kOQcmleMxV87SxIEWFhI1AlywWKeeakP2yhCxsWevmlF8gwXfnmhFI3RNIfwVS6UT8gUKnClDJDXg24gpLUnE40Tl8AcVakX93vG9kvUxLbWV06r7jZuMmYqOmjVLMfouGxf-FwZRGFAPd0u9spd1h8ztKbg8Q-aDFo3eBhs_mwQKd_6BpHYWxxjXjZOzgk6aBkDlcbfR0TKcfQQtei5KL8NIsTODhyrGBDFlI2dmM-6kTt32vj7w0q2WWDUX67wBM74zyNAJiIUgqXVL3-WhAdPif3-zbMGgHqb4UhznUaYjKpjJe5NNrjwX5nK7HIPOSGQdNMnSJzSowL8EAGeOOq_PlfIeoZBe08fZp1Wtq-nveopnj_83ec1qlDy73sTGoihQT2U&amp;amp;refId=NJif%2BsZMCeAtQX9a9Rysgw%3D%3D&amp;amp;trackingId=1EloguLIEeqDybs3rFPhHA%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test3&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4216657296/?eBP=CwEAAAGWr-CYqk_F6-JnQ41xeGRQ_AjFVnrQuFPnTzWdrn83hhgKK4Sc4SmYvQoMDPQh1yMOggYCy_U_cRdvOtlk5irPNcnlxoXNswSEBOoBM8mHcE7FVmHwVOOSH8tc8H5U42Fwdb-UCm7nTS3rRwtIIet2f7E0fjxNpm1ymAC_VYJBZ9eIUppEJgWYaq3pdSgJMRUXlSAdf8bmJIDDUIuwVEvE9FdPf7bEYA4a6NmfRoJNfXZwdvuiaw8_dlPo_1KLhVyE-UdSlp4lcfjNHG_aOz8DmSwv8HP3_C_BZLy0-mfiAMwOY-3bwnbLAiYudPWmKVr-JFTrNSdcWvTVy0SuS4YULcFcrwRXrgPIAPE0sQkWo3PckveHuwxobr9Hi8Ja252xeTLrSFPZkci-KnfAzhPPZsEL_wyC4QaFlnkypU_4VjIoBxXdj5PYtRExJBdMMxGWUCE4Il4fQNw_-pBFEspy5nT-VUIBWurdhxucF5ohQ2K9xqkAm49Zx0p8fyIco83iAtoEI_FsrRtNX0GPvlxhF8ZRzF0m&amp;amp;refId=%2FwYgctkGrcOLCHYXF6g42A%3D%3D&amp;amp;trackingId=BG2Z0qBL8BnkMtHWZBq%2BQQ%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test4&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4221164913/?eBP=CwEAAAGWr-CYqvfzaSTC3T1Uzga5C8qJ7Ff208-02sFWJb3yV-1dvUX19GNgn2Pye8zmzh7MiUPxbt2eaP7o1IzTCutTjt8N9NJzOuz4iWa3C-sHgZz1MLHmvcnulRgupqdtYDPRflJfqXUuqEG3RyLobOVdm0Z7xL5L-BqZkXbLW6d6N41CDHBmjHNMXdhKm3EFnqdrIN_l7_D2SodQ1ULcluUToSIGE7pn41qhcHagjngvBeUA1hpqJVwe3TyUCZQyux82w2e8wJLSX-Wsrz9NSWQ21bNNA43nJfp23TrYEUf8jEBvM-tsiNSrduhz5RlBU4eiZ-DXRg5fSOLH8x0pALhtAgw-5J9j3kaHzDd-AMLhaH1WfkXawPjE1hEwaxEgrHwVpTZAefO_o_r7n9JjuOeFUnVOmp3OK49Of-haRNzDGNJw6HKCGUjrVpTnflDsZ1-G0BEY9afU29Dqmg1ydkLElD41mua2IfZilJnwTp8Q5hGbv-IY-8_cGKYZ3tvb2A-WIstx_V491brtBiAYp2WD4dP2ATVE&amp;amp;refId=%2FwYgctkGrcOLCHYXF6g42A%3D%3D&amp;amp;trackingId=fwbXeE0xwlSzSP8H1avoZA%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test5&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4082442996/?eBP=BUDGET_EXHAUSTED_JOB&amp;amp;refId=wJIQyRLNPwCzCjLrjes1Jg%3D%3D&amp;amp;trackingId=mWH5BAuyD0QtyCqypVLy5Q%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[jobsDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="622.4,2956" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Time, Company Name, Job Title, Link, Status" DataTable="[applicationsResult]" DisplayName="Build Applications Result DataTable" sap:VirtualizedContainerService.HintSize="518.4,123.2" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;company_name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;job_title&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Link&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Status&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;time&gt;Timestamp&lt;/time&gt;&#xD;&#xA;    &lt;company_name&gt;Company Name&lt;/company_name&gt;&#xD;&#xA;    &lt;job_title&gt;Job Title&lt;/job_title&gt;&#xD;&#xA;    &lt;Link&gt;Job Link&lt;/Link&gt;&#xD;&#xA;    &lt;Status&gt;Application Status&lt;/Status&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:BuildDataTable>
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="predefined links for easier debugging/ disable this before the discussion" DataTable="[jobsDataTable]" DisplayName="Build Links Data Table (debug)" sap:VirtualizedContainerService.HintSize="518.4,136" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Column1&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Column2&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test1&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4206911264/?eBP=CwEAAAGWvIkhRitCkM6JKcfKPg03uHRoJQRDCFZ8XGzw-TCTVmDojts66_dXa7CMKRG3bAjm-CHWHas370tvMfHf0JdvWS6AFtHFlTNGC1PHLjmtLszcTJ2FoRGMpLYc_lS3jT0JZXyz4sika48rZZ9QWW27nvZldz0hZ1GCvOK2o4vFUtTrfKDcNjdKx_5jt1W2OzAikWf6eU_189k1odFSotxkjNjiBBE_OfcdAWsAsRCy33-Dd2KGjRxe2O6BinzkbyjVsDA7qUtyfS_ivmOPShXfq7l4_pFa9eIr_vPWanXVEjQftBjw4fcAUpe4m0-HsaTKO5ZasYWjSyUH3bJJKsmEOP_X5g2SVfBXS15rHH7kxvmxzTgr96d0qZo05XIak8_hCvFi90jraUCL6ZVxy0GUZ77VVzfyrA4XgKd2euZHYM0SKNhNKTsl1oHzfJnJ_mSWJObsStlpCHzppvMo43E-3RTiUw_fd6jyog&amp;amp;refId=FbOLamY2Wgow24CpHruQVw%3D%3D&amp;amp;trackingId=fOCVpaMILnKEFEj0moe83g%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test2&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4225672426/?eBP=CwEAAAGWxLJLzF24tukn53ba489hzBBsuNx8Q765S8jg5Mup8GvfBC_bS5s6X_CQskjWW2Iu1refT-O8-A8l-50RAXiy0ybi_mesmnyk_xu2LGRI2me6TfDA2W0Ur9wHVxN5kOQcmleMxV87SxIEWFhI1AlywWKeeakP2yhCxsWevmlF8gwXfnmhFI3RNIfwVS6UT8gUKnClDJDXg24gpLUnE40Tl8AcVakX93vG9kvUxLbWV06r7jZuMmYqOmjVLMfouGxf-FwZRGFAPd0u9spd1h8ztKbg8Q-aDFo3eBhs_mwQKd_6BpHYWxxjXjZOzgk6aBkDlcbfR0TKcfQQtei5KL8NIsTODhyrGBDFlI2dmM-6kTt32vj7w0q2WWDUX67wBM74zyNAJiIUgqXVL3-WhAdPif3-zbMGgHqb4UhznUaYjKpjJe5NNrjwX5nK7HIPOSGQdNMnSJzSowL8EAGeOOq_PlfIeoZBe08fZp1Wtq-nveopnj_83ec1qlDy73sTGoihQT2U&amp;amp;refId=NJif%2BsZMCeAtQX9a9Rysgw%3D%3D&amp;amp;trackingId=1EloguLIEeqDybs3rFPhHA%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test3&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4216657296/?eBP=CwEAAAGWr-CYqk_F6-JnQ41xeGRQ_AjFVnrQuFPnTzWdrn83hhgKK4Sc4SmYvQoMDPQh1yMOggYCy_U_cRdvOtlk5irPNcnlxoXNswSEBOoBM8mHcE7FVmHwVOOSH8tc8H5U42Fwdb-UCm7nTS3rRwtIIet2f7E0fjxNpm1ymAC_VYJBZ9eIUppEJgWYaq3pdSgJMRUXlSAdf8bmJIDDUIuwVEvE9FdPf7bEYA4a6NmfRoJNfXZwdvuiaw8_dlPo_1KLhVyE-UdSlp4lcfjNHG_aOz8DmSwv8HP3_C_BZLy0-mfiAMwOY-3bwnbLAiYudPWmKVr-JFTrNSdcWvTVy0SuS4YULcFcrwRXrgPIAPE0sQkWo3PckveHuwxobr9Hi8Ja252xeTLrSFPZkci-KnfAzhPPZsEL_wyC4QaFlnkypU_4VjIoBxXdj5PYtRExJBdMMxGWUCE4Il4fQNw_-pBFEspy5nT-VUIBWurdhxucF5ohQ2K9xqkAm49Zx0p8fyIco83iAtoEI_FsrRtNX0GPvlxhF8ZRzF0m&amp;amp;refId=%2FwYgctkGrcOLCHYXF6g42A%3D%3D&amp;amp;trackingId=BG2Z0qBL8BnkMtHWZBq%2BQQ%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test4&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4221164913/?eBP=CwEAAAGWr-CYqvfzaSTC3T1Uzga5C8qJ7Ff208-02sFWJb3yV-1dvUX19GNgn2Pye8zmzh7MiUPxbt2eaP7o1IzTCutTjt8N9NJzOuz4iWa3C-sHgZz1MLHmvcnulRgupqdtYDPRflJfqXUuqEG3RyLobOVdm0Z7xL5L-BqZkXbLW6d6N41CDHBmjHNMXdhKm3EFnqdrIN_l7_D2SodQ1ULcluUToSIGE7pn41qhcHagjngvBeUA1hpqJVwe3TyUCZQyux82w2e8wJLSX-Wsrz9NSWQ21bNNA43nJfp23TrYEUf8jEBvM-tsiNSrduhz5RlBU4eiZ-DXRg5fSOLH8x0pALhtAgw-5J9j3kaHzDd-AMLhaH1WfkXawPjE1hEwaxEgrHwVpTZAefO_o_r7n9JjuOeFUnVOmp3OK49Of-haRNzDGNJw6HKCGUjrVpTnflDsZ1-G0BEY9afU29Dqmg1ydkLElD41mua2IfZilJnwTp8Q5hGbv-IY-8_cGKYZ3tvb2A-WIstx_V491brtBiAYp2WD4dP2ATVE&amp;amp;refId=%2FwYgctkGrcOLCHYXF6g42A%3D%3D&amp;amp;trackingId=fwbXeE0xwlSzSP8H1avoZA%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Column1&gt;test5&lt;/Column1&gt;&#xA;    &lt;Column2&gt;https://www.linkedin.com/jobs/view/4082442996/?eBP=BUDGET_EXHAUSTED_JOB&amp;amp;refId=wJIQyRLNPwCzCjLrjes1Jg%3D%3D&amp;amp;trackingId=mWH5BAuyD0QtyCqypVLy5Q%3D%3D&amp;amp;trk=flagship3_search_srp_jobs&lt;/Column2&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:BuildDataTable>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[jobsDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="518.4,1586.4" sap2010:WorkflowViewState.IdRef="ForEachRow_1" MaxIterations="2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="currentJob" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="620.8,2783.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="516.8,1404.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="currentTab" />
             </Sequence.Variables>
@@ -153,7 +166,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="587.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="483.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[currentJobLink]</OutArgument>
               </Assign.To>
@@ -161,13 +174,13 @@
                 <InArgument x:TypeArguments="x:String">[currentJob(1).ToString()]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome New Tab" sap:VirtualizedContainerService.HintSize="587.2,2609.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[currentTab]" ScopeGuid="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V2" WindowResize="Maximize">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome New Tab" sap:VirtualizedContainerService.HintSize="483.2,1231.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[currentTab]" ScopeGuid="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V2" WindowResize="Maximize">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="553.6,2369.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,991.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="phoneExists" />
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="children" />
@@ -175,13 +188,40 @@
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formChildren" />
                       <Variable x:TypeArguments="ui:UiElement" Name="footerButtonElement" />
                       <Variable x:TypeArguments="x:Boolean" Name="isSubmitAvailable" />
+                      <Variable x:TypeArguments="x:String" Name="applicationStatus" />
+                      <Variable x:TypeArguments="x:String" Name="jobTitle" />
+                      <Variable x:TypeArguments="x:String" Name="jobCompany" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Easy Apply'" sap:VirtualizedContainerService.HintSize="520,225.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V4">
+                    <uix:NGetText DisplayName="Get Job Title" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="1327a854-f73a-4ddb-904e-b64c896f33af" TextString="[jobTitle]" Version="V4">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/view/4206911264" CVScreenId="ecec63bf-c4c8-4657-9942-f7be8f471737" ContentHash="5KHTrrCRv0efPo4GD3nqMA" CvTextArea="282, 395, 369, 32" CvType="AnyWordGroup" DesignTimeRectangle="285, 387, 365, 40" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='t-24 t-bold inline' /&gt;" Guid="00118b97-8e5f-4494-8856-7bd992c2696e" InformativeScreenshot="c69bfa6dce985cfdd612cb9b44783378.png" Reference="APb3D8kHDUyuuOT2uOGFlA/6I6obL0-A0G06rjBRR9H3A" ScopeSelectorArgument="&lt;html app='chrome.exe' omit:title='(19) Senior Frontend Developer | Khazna | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target CVScreenId="ecec63bf-c4c8-4657-9942-f7be8f471737" CvElementArea="260, 251, 49, 48" CvTextArea="266, 256, 33, 36" CvType="Icon" DesignTimeRectangle="263, 253, 43, 43" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl parentid='global-nav' tag='path' type='' class='' aaname='' /&gt;" Guid="ef73e301-602f-4cb4-a26f-65d59254f7fb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC8AAAAvCAYAAABzJ5OsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJjSURBVGhD7ZnPSxRhGMc9d+xPCDpGN5XOQaXoITIpQiNIBDsIFkHpxcSDpCn+SE0RUcyDdjCIRKmUVZNcqV1dXd3McolV0V231spVH3kmdsrnmQlfcWbf1/zC5zLvd2c/A7PvvjNvAiicBHpApRwe+dGPYSh46oMLFS449/CDNKDP7U6f5vd3dPmB6SAcyxmUnmHfGpe/2eJlRRnJbfVy+ZQKFyvKSOojF5fHe4sWZQQ9/x/5s2XvwTETgrX1KCyFN6DXvQqni96xnh0IyZ8pGYetbb2vJ/xjE07cecv6ViMk3z4c0Ms097rmWN9qhOSHZv/MqzSNb76yvtUIyb90r+hlmrIXX1jfaoTki5590ss0l2omWN9qhOQRuqbA1PT7Wc8OhOWRtEo33O+eg1ttM5D8wMnG7WJf8rJwJB8vhOTTq9ww6A0ZQrvV/X7WQTLrJrXxk3dHofT5Z20C+P5zU/veUCSqfe5U4d6WG0LyuM43C+2iqFHyO2bhfLkLgpEoHdqVyt4Fdk6K7fKtjgBEfm3Rw4bpGFlk542rvGgu1/6+zYyQXv71lPnzdNzkq/r8cK3BA1cee+CVJ0iHd+V4noOdP27y+IMV6Zs97Ngu75z/xrrIxeoJWtVj5mO7fPfYMusiOO+bBS+M9hHb5duGAqwbwywZJjPOkTyGdg9SPrakoCghj9Mp7SJKyF+tV1ge/8xoF1FCPqtxinURJeSznygsf71pmnURJeRvNB+AfFKxE0p65g2hXbxQ2kH+tT6n3RiJxcavV4TkZePwySu9J4X3Ky3KiOFuoNL7sBhld8BVzA4otNb1KYfQ4AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <uix:NGetText DisplayName="Get Company Name" sap:VirtualizedContainerService.HintSize="416,189.6" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="1327a854-f73a-4ddb-904e-b64c896f33af" TextString="[jobCompany]" Version="V4">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/view/4206911264" ContentHash="g1g1mp7810WgbLKewHUsQw" DesignTimeRectangle="344, 275, 58, 22" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='*' tag='A' type='' class='tnBjozDiJvZeGqkhdilCDjmgvEevaqQbMM ' /&gt;" Guid="4db5dc7a-b71d-448b-8018-34d898aebd7c" InformativeScreenshot="a5344291a7c382277f35588490401ec3.png" Reference="APb3D8kHDUyuuOT2uOGFlA/3siEhitwnU685upBNYFA5g" ScopeSelectorArgument="&lt;html app='chrome.exe' omit:title='(19) Senior Frontend Developer | Khazna | LinkedIn' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="3">
+                              <uix:Target DesignTimeRectangle="315, 128, 350, 43" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='basic-input search-global-typeahead__input search-global-typeahead__input--nile-background&amp;#xA;            search-global-typeahead__input--ellipsis&amp;#xA;            &amp;#xA;            &amp;#xA;            ' placeholder='Search' aaname='' /&gt;" Guid="976f1125-295d-4baa-a43c-bf61fd29d471" SearchSteps="FuzzySelector" />
+                              <uix:Target DesignTimeRectangle="263, 128, 43, 43" ElementType="Icon" FuzzySelectorArgument="&lt;webctrl parentid='global-nav' tag='path' type='' class='' aaname='' /&gt;" Guid="c588f47a-eaea-4137-b88b-635458468792" SearchSteps="FuzzySelector" />
+                              <uix:Target DesignTimeRectangle="285, 478, 170, 50" ElementType="Button" FuzzySelectorArgument="&lt;webctrl  id='jobs-apply-button-id' tag='BUTTON' type='' class='jobs-apply-button&amp;#xA;         artdeco-button artdeco-button--3 artdeco-button--primary ember-view' aaname='                           Easy Apply ' check:innerText='Easy Apply' /&gt;" Guid="4a14ea69-3420-48ae-9434-589338c2d83d" SearchSteps="FuzzySelector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Easy Apply'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1327a854-f73a-4ddb-904e-b64c896f33af" Version="V4">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/view/4189463461" CVScreenId="f461f270-e4ca-4633-aa76-2a6d6b63d427" ContentHash="f9RR0F4FMUe7vSIIGSh55w" CvElementArea="281, 546, 175, 54" CvType="Button" DesignTimeRectangle="285, 547, 170, 50" DesignTimeScaleFactor="1.25" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Easy Apply to Sr. Front End Developer at Obeikan Investment Group' id='jobs-apply-button-id' tag='BUTTON' type='' class='jobs-apply-button&amp;#xA;         artdeco-button artdeco-button--3 artdeco-button--primary ember-view' aaname='                           Easy Apply ' check:innerText='Easy Apply' /&gt;" Guid="4f205ecf-32c5-4d9c-8206-9c4b902adc15" InformativeScreenshot="9e437c3fcb2b45a92a163b67dcf061ad.png" Reference="APb3D8kHDUyuuOT2uOGFlA/TbOfIKlkI0WPQJeQw4GiQQ" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sr. Front End Developer | Obeikan Investment Group | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -202,9 +242,9 @@
                         </uix:VerifyExecutionOptions>
                       </uix:NClick.VerifyOptions>
                     </uix:NClick>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="520,2032.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="True" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,1902.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="502.4,2267.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="footerButtonAttribute" />
                           </Sequence.Variables>
@@ -213,7 +253,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="the current form element which includes only the input fields and so on" DisplayName="Find Form Element" FoundElement="[formElement]" sap:VirtualizedContainerService.HintSize="484.8,162.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
+                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="the current form element which includes only the input fields and so on" DisplayName="Find Form Element" FoundElement="[formElement]" sap:VirtualizedContainerService.HintSize="468.8,162.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
                             <ui:WaitUiElementAppear.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ef48465a-464d-4a0d-9509-e91fa232af5a" Selector="&lt;webctrl class='ph5' tag='DIV' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -230,49 +270,27 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:WaitUiElementAppear>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,337.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_CVUploadHandler - Invoke Workflow File (Modules\LinkedIn_CVUploadHandler.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Modules\LinkedIn_CVUploadHandler.xaml">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
-                                    <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="CVPathArg">[CVPath]</InArgument>
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                </ui:InvokeWorkflowFile>
-                              </Sequence>
-                            </ui:CommentOut.Body>
-                          </ui:CommentOut>
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,337.6" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                            <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,227.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_TextInputHandler - Invoke Workflow File (Modules\LinkedIn_FormElementHandler.xaml)" sap:VirtualizedContainerService.HintSize="416,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LinkedIn_TextInputHandler.xaml">
-                                  <ui:InvokeWorkflowFile.Arguments>
-                                    <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
-                                    <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
-                                    <InArgument x:TypeArguments="x:String" x:Key="CVText">[CVText]</InArgument>
-                                  </ui:InvokeWorkflowFile.Arguments>
-                                </ui:InvokeWorkflowFile>
-                              </Sequence>
-                            </ui:CommentOut.Body>
-                          </ui:CommentOut>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_RadioButtonHandler - Invoke Workflow File (Modules\LinkedIn_RadioButtonHandler.xaml)" sap:VirtualizedContainerService.HintSize="484.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Modules\LinkedIn_RadioButtonHandler.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_CVUploadHandler - Invoke Workflow File (Modules\LinkedIn_CVUploadHandler.xaml)" sap:VirtualizedContainerService.HintSize="468.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Modules\LinkedIn_CVUploadHandler.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
+                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="CVPathArg">[CVPath]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_TextInputHandler - Invoke Workflow File (Modules\LinkedIn_FormElementHandler.xaml)" sap:VirtualizedContainerService.HintSize="468.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Modules\LinkedIn_TextInputHandler.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
+                              <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="CVText">[CVText]</InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                          </ui:InvokeWorkflowFile>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_RadioButtonHandler - Invoke Workflow File (Modules\LinkedIn_RadioButtonHandler.xaml)" sap:VirtualizedContainerService.HintSize="468.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Modules\LinkedIn_RadioButtonHandler.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="ui:UiElement" x:Key="formElementArg">[formElement]</InArgument>
                               <InOutArgument x:TypeArguments="ui:UiElement" x:Key="browserTab">[currentTab]</InOutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="Submit/Review/Next Button to handle form loop" DisplayName="Find Footer Button" FoundElement="[footerButtonElement]" sap:VirtualizedContainerService.HintSize="484.8,149.6" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
+                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" sap2010:Annotation.AnnotationText="Submit/Review/Next Button to handle form loop" DisplayName="Find Footer Button" FoundElement="[footerButtonElement]" sap:VirtualizedContainerService.HintSize="468.8,149.6" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
                             <ui:WaitUiElementAppear.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="01322594-36f6-4eec-9776-a4486d12784a" Selector="&lt;webctrl tag='BUTTON' class='artdeco-button artdeco-button--2 artdeco-button--primary ember-view' omit:visibleinnertext='Next' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -289,13 +307,15 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:WaitUiElementAppear>
-                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="484.8,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" InUiElement="[footerButtonElement]" Result="[footerButtonAttribute]" Version="V4" />
-                          <ui:IfElseIfV2 Condition="[footerButtonAttribute = &quot;Submit application&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="484.8,459.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
+                          <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="468.8,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" InUiElement="[footerButtonElement]" Result="[footerButtonAttribute]" Version="V4" />
+                          <ui:IfElseIfV2 sap2010:Annotation.AnnotationText="if button = submit, close the form to avoid submitting fake applications and break out of the loop to enter the next link" Condition="[footerButtonAttribute = &quot;Submit application&quot;]" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="468.8,1147.2" sap2010:WorkflowViewState.IdRef="IfElseIfV2_1">
                             <ui:IfElseIfV2.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,256.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                              <Sequence sap2010:Annotation.AnnotationText="if button isnt submit, click on it" DisplayName="Else" sap:VirtualizedContainerService.HintSize="467.2,56" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,196.8" sap2010:WorkflowViewState.IdRef="NClick_6" InUiElement="[footerButtonElement]" KeyModifiers="None" MouseButton="Left" Version="V4">
@@ -315,19 +335,26 @@
                             <ui:IfElseIfV2.ElseIfs>
                               <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True" />
                             </ui:IfElseIfV2.ElseIfs>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                             <ui:IfElseIfV2.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,869.6" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="ui:UiElement" Name="closeButton" />
                                   <Variable x:TypeArguments="ui:UiElement" Name="discardButton" />
                                 </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Close Button" FoundElement="[closeButton]" sap:VirtualizedContainerService.HintSize="382.4,118.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_8">
+                                <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Close Button" FoundElement="[closeButton]" sap:VirtualizedContainerService.HintSize="433.6,118.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_8">
                                   <ui:WaitUiElementAppear.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3d05c68e-ac7b-452e-8841-f65ab08a4c88" Selector="&lt;webctrl tag='BUTTON' aria-label='Dismiss' class='artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--2 artdeco-button--tertiary ember-view artdeco-modal__dismiss' /&gt;">
                                       <ui:Target.TimeoutMS>
@@ -339,7 +366,7 @@
                                     </ui:Target>
                                   </ui:WaitUiElementAppear.Target>
                                 </ui:WaitUiElementAppear>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,205.6" sap2010:WorkflowViewState.IdRef="NClick_7" InUiElement="[closeButton]" KeyModifiers="None" MouseButton="Left" Version="V4">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="433.6,205.6" sap2010:WorkflowViewState.IdRef="NClick_7" InUiElement="[closeButton]" KeyModifiers="None" MouseButton="Left" Version="V4">
                                   <uix:NClick.VerifyOptions>
                                     <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                                       <uix:VerifyExecutionOptions.Retry>
@@ -351,7 +378,7 @@
                                     </uix:VerifyExecutionOptions>
                                   </uix:NClick.VerifyOptions>
                                 </uix:NClick>
-                                <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Discard Button" FoundElement="[discardButton]" sap:VirtualizedContainerService.HintSize="382.4,118.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_9">
+                                <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Discard Button" FoundElement="[discardButton]" sap:VirtualizedContainerService.HintSize="433.6,118.4" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_9">
                                   <ui:WaitUiElementAppear.Target>
                                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ebfa63c2-2bd4-4d9e-ba38-0d40079a3af7" Selector="&lt;webctrl tag='BUTTON' class='artdeco-button artdeco-button--2 artdeco-button--secondary ember-view artdeco-modal__confirm-dialog-btn' visibleinnertext='Discard' /&gt;">
                                       <ui:Target.TimeoutMS>
@@ -363,7 +390,7 @@
                                     </ui:Target>
                                   </ui:WaitUiElementAppear.Target>
                                 </ui:WaitUiElementAppear>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,205.6" sap2010:WorkflowViewState.IdRef="NClick_8" InUiElement="[discardButton]" KeyModifiers="None" MouseButton="Left" Version="V4">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="433.6,205.6" sap2010:WorkflowViewState.IdRef="NClick_8" InUiElement="[discardButton]" KeyModifiers="None" MouseButton="Left" Version="V4">
                                   <uix:NClick.VerifyOptions>
                                     <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                                       <uix:VerifyExecutionOptions.Retry>
@@ -375,14 +402,29 @@
                                     </uix:VerifyExecutionOptions>
                                   </uix:NClick.VerifyOptions>
                                 </uix:NClick>
-                                <ui:Break sap:VirtualizedContainerService.HintSize="382.4,48" sap2010:WorkflowViewState.IdRef="Break_2" />
+                                <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[applicationStatus]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">Successful</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:Break sap:VirtualizedContainerService.HintSize="433.6,48" sap2010:WorkflowViewState.IdRef="Break_2" />
                               </Sequence>
                             </ui:IfElseIfV2.Then>
                           </ui:IfElseIfV2>
                         </Sequence>
                       </ui:InterruptibleDoWhile.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </ui:InterruptibleDoWhile>
-                    <ui:Continue sap:VirtualizedContainerService.HintSize="520,49.6" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() {DateTime.Now.ToString(), jobCompany, jobTitle, currentJobLink, applicationStatus}]" DataTable="[applicationsResult]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <ui:Continue sap:VirtualizedContainerService.HintSize="416,49.6" sap2010:WorkflowViewState.IdRef="Continue_1" />
                   </Sequence>
                 </ActivityAction>
               </uix:NApplicationCard.Body>
@@ -393,6 +435,18 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Report_Handler - Invoke Workflow File (Modules\Report_Handler.xaml)" sap:VirtualizedContainerService.HintSize="518.4,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Modules\Report_Handler.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="userEmail">farisroro8@gmail.com</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="reportDT">[applicationsResult]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
