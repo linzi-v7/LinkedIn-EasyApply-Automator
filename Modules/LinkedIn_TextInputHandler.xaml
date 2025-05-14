@@ -224,15 +224,15 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="502.4,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" InUiElement="[labelArea]" Result="[labelAreaText]" Version="V4" />
-                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,306.4" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,306.4" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                             <ui:CommentOut.Body>
-                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="467.2,196" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="467.2,196" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Assign sap2010:Annotation.AnnotationText="DEBUG" sap:VirtualizedContainerService.HintSize="433.6,136" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                <Assign sap2010:Annotation.AnnotationText="DEBUG" sap:VirtualizedContainerService.HintSize="433.6,136" sap2010:WorkflowViewState.IdRef="Assign_7">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:String">[CVText]</OutArgument>
                                   </Assign.To>

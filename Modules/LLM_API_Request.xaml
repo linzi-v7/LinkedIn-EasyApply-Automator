@@ -266,7 +266,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="914.8000000000001,1651.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="914.8000000000001,2282.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="requestBody" />
       <Variable x:TypeArguments="x:String" Name="jsonResponse" />
@@ -320,14 +320,28 @@ strPrompt &amp;
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
+    <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes (make sure data returns as intended, specifically the JSON output)" DisplayName="Write Text File" FileName="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop) &amp; &quot;\Untitled.txt&quot;]" sap:VirtualizedContainerService.HintSize="502.4,210.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[strPrompt]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteTextFile>
     <Assign sap:VirtualizedContainerService.HintSize="502.4,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strPrompt]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[strPrompt.Replace("""", "")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[strPrompt.Replace("""", "").Replace(vbCrLf, "\n")]</InArgument>
       </Assign.Value>
     </Assign>
+    <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes (make sure data returns as intended, specifically the JSON output)" DisplayName="Write Text File" FileName="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop) &amp; &quot;\Untitled2.txt&quot;]" sap:VirtualizedContainerService.HintSize="502.4,210.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[strPrompt]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteTextFile>
     <Assign sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="502.4,146.4" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[requestBody]</OutArgument>
@@ -352,6 +366,13 @@ strPrompt &amp;
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
+    <ui:WriteTextFile File="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes (make sure data returns as intended, specifically the JSON output)" DisplayName="Write Text File" FileName="[Environment.GetFolderPath(Environment.SpecialFolder.Desktop) &amp; &quot;\Untitled3.txt&quot;]" sap:VirtualizedContainerService.HintSize="502.4,210.4" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[requestBody]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:WriteTextFile>
     <ui:HttpClient ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="JSON" AuthenticationType="None" Body="[requestBody]" BodyFormat="application/json" DisplayName="HTTP Request" EnableSSLVerification="True" EndPoint="https://llm.chutes.ai/v1/chat/completions" sap:VirtualizedContainerService.HintSize="502.4,103.2" sap2010:WorkflowViewState.IdRef="HttpClient_3" Method="POST" Result="[jsonResponse]" TimeoutMS="20000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
