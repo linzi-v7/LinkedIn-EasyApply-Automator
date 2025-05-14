@@ -88,6 +88,7 @@
       <x:String>UiPath.OCR.Contracts</x:String>
       <x:String>UiPath.OCR.Activities</x:String>
       <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Platform</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -169,6 +170,7 @@
       <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -176,12 +178,13 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Function takes email as an argument and returns the data needed for later processing (numOfApplications, Job Keyword, CVText and CVPath)" DisplayName="Email_Input_Handler" sap:VirtualizedContainerService.HintSize="902.4000000000001,2746.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Function takes email as an argument and returns the data needed for later processing (numOfApplications, Job Keyword, CVText and CVPath)" DisplayName="Email_Input_Handler" sap:VirtualizedContainerService.HintSize="914.8000000000001,3406.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSenderEmail" />
       <Variable x:TypeArguments="x:String" Name="strRequestInfo" />
       <Variable x:TypeArguments="x:String" Name="strNumOfApplications" />
       <Variable x:TypeArguments="ummm:O365AttachmentLocalItem[]" Name="DownloadedAttachments" />
+      <Variable x:TypeArguments="x:String" Name="strPath" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -189,14 +192,14 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:TextToLeftRight TextToLeft="{x:Null}" sap2010:Annotation.AnnotationText="[JOB APPLICATION]  JOBNAME - NUM&#xD;&#xA;splits at ']' to get job name and number" DisplayName="Text to Left/Right" FullText="[currentEmail.Subject]" sap:VirtualizedContainerService.HintSize="468.8,350.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="]" SeparatorKey="Custom" TextToRight="[strRequestInfo]">
+    <ui:TextToLeftRight TextToLeft="{x:Null}" sap2010:Annotation.AnnotationText="[JOB APPLICATION]  JOBNAME - NUM&#xA;splits at ']' to get job name and number" DisplayName="Text to Left/Right" FullText="[currentEmail.Subject]" sap:VirtualizedContainerService.HintSize="520,350.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="]" SeparatorKey="Custom" TextToRight="[strRequestInfo]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:TextToLeftRight>
-    <Assign sap2010:Annotation.AnnotationText="Remove whitespace" sap:VirtualizedContainerService.HintSize="468.8,144.8" sap2010:WorkflowViewState.IdRef="Assign_6">
+    <Assign sap2010:Annotation.AnnotationText="Remove whitespace" sap:VirtualizedContainerService.HintSize="520,144.8" sap2010:WorkflowViewState.IdRef="Assign_6">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strRequestInfo]</OutArgument>
       </Assign.To>
@@ -209,8 +212,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:TextToLeftRight DisplayName="Text to Left/Right" FullText="[strRequestInfo]" sap:VirtualizedContainerService.HintSize="468.8,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="-" SeparatorKey="Custom" TextToLeft="[strJobKeyword]" TextToRight="[strNumOfApplications]" />
-    <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+    <ui:TextToLeftRight DisplayName="Text to Left/Right" FullText="[strRequestInfo]" sap:VirtualizedContainerService.HintSize="520,306.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="-" SeparatorKey="Custom" TextToLeft="[strJobKeyword]" TextToRight="[strNumOfApplications]" />
+    <Assign sap:VirtualizedContainerService.HintSize="520,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[intNumOfApplications]</OutArgument>
       </Assign.To>
@@ -218,28 +221,60 @@
         <InArgument x:TypeArguments="x:Int32">[CInt(strNumOfApplications)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="468.8,117.6" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[strJobKeyword + intNumOfApplications.ToString()]" />
-    <umam:DownloadEmailAttachments ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="Download Email Attachments" Email="[currentEmail]" ExcludeInlineAttachments="False" FilterByFileNames="*.pdf" sap:VirtualizedContainerService.HintSize="468.8,236.8" sap2010:WorkflowViewState.IdRef="DownloadEmailAttachments_2" NewResult="[DownloadedAttachments]" SearchMode="UseSimple" UseConnectionService="True" />
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="468.8,148.8" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[CurrentEmail.AttachmentCount]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:MessageBox>
-    <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each attachment" sap:VirtualizedContainerService.HintSize="468.8,681.6" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DownloadedAttachments]">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,310.4" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence sap2010:Annotation.AnnotationText="DEBUG" DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,108.8" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[strJobKeyword + intNumOfApplications.ToString()]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <umam:DownloadEmailAttachments ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="Download Email Attachments" Email="[currentEmail]" ExcludeInlineAttachments="False" FilterByFileNames="*.pdf" sap:VirtualizedContainerService.HintSize="520,236.8" sap2010:WorkflowViewState.IdRef="DownloadEmailAttachments_2" NewResult="[DownloadedAttachments]" SearchMode="UseSimple" UseConnectionService="True" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="520,310.4" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,140" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[CurrentEmail.AttachmentCount]">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:MessageBox>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each attachment" sap:VirtualizedContainerService.HintSize="520,987.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DownloadedAttachments]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="attachment" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,551.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,856.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,148.8" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[attachment.LocalPath]">
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" Path="{x:Null}" Destination="[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + &quot;\CV.pdf&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="433.6,192" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" PathResource="[attachment]" />
+            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[strPath]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\CV.pdf"]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,148.8" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[strPath]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -251,7 +286,7 @@
                 <OutArgument x:TypeArguments="x:String">[strCVPath]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[attachment.LocalPath]</InArgument>
+                <InArgument x:TypeArguments="x:String">[strPath]</InArgument>
               </Assign.Value>
             </Assign>
             <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[strCVPath]" sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="All" Text="[strCVText]" />
@@ -260,7 +295,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="468.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+    <Assign sap:VirtualizedContainerService.HintSize="520,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strSenderEmail]</OutArgument>
       </Assign.To>
@@ -268,7 +303,7 @@
         <InArgument x:TypeArguments="x:String">[CurrentEmail.SenderAddress]</InArgument>
       </Assign.Value>
     </Assign>
-    <umam:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" NewSubject="{x:Null}" ReplyAs="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Dear &lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;{0}&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Thank you for your &lt;/SPAN&gt;&lt;SPAN&gt;automation request &lt;/SPAN&gt;&lt;SPAN&gt;submission. We confirm receipt of the following details:&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Job Keyword: &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Number Of Applications: &lt;/SPAN&gt;&lt;SPAN&gt;{2}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Parsed CV Text: &lt;/SPAN&gt;&lt;SPAN&gt;{3}&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Your request is currently being processed. You will receive a completion report via email once processing is finished.&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;Should you require any assistance, please don&amp;#39;t hesitate to contact our support team.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Best Regards,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;BR/&gt;&lt;SPAN&gt;Automation Team&lt;/SPAN&gt;&lt;/P&gt;&quot;, currentEmail.Sender.DisplayName.ToString, strJobKeyword, intNumOfApplications.ToString, strCVText)]" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="Reply to Email" Email="[currentEmail]" sap:VirtualizedContainerService.HintSize="468.8,478.4" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_2" Importance="Normal" PreferredTimezone="UTC" ReplyToAll="True" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
+    <umam:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" MailboxBackup="{x:Reference __ReferenceID0}" NewSubject="{x:Null}" ReplyAs="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="Existing" AuthScopesInvalid="False" Body="[string.Format(&quot;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Dear &lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;{0}&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;SPAN&gt;&lt;STRONG&gt;,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Thank you for your &lt;/SPAN&gt;&lt;SPAN&gt;automation request &lt;/SPAN&gt;&lt;SPAN&gt;submission. We confirm receipt of the following details:&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Job Keyword: &lt;/SPAN&gt;&lt;SPAN&gt;{1}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Number Of Applications: &lt;/SPAN&gt;&lt;SPAN&gt;{2}&lt;/SPAN&gt;&lt;BR/&gt;&lt;BR/&gt;&lt;SPAN&gt;Parsed CV Text: &lt;/SPAN&gt;&lt;SPAN&gt;{3}&lt;/SPAN&gt;&lt;BR/&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;Your request is currently being processed. You will receive a completion report via email once processing is finished.&lt;/SPAN&gt;&lt;SPAN&gt; &lt;/SPAN&gt;&lt;SPAN&gt;Should you require any assistance, please don&amp;#39;t hesitate to contact our support team.&lt;/SPAN&gt;&lt;/P&gt;&lt;P&gt;&lt;SPAN&gt;&lt;STRONG&gt;Best Regards,&lt;/STRONG&gt;&lt;/SPAN&gt;&lt;BR/&gt;&lt;SPAN&gt;Automation Team&lt;/SPAN&gt;&lt;/P&gt;&quot;, currentEmail.Sender.DisplayName.ToString, strJobKeyword, intNumOfApplications.ToString, strCVText)]" ConnectionId="ca07a1ca-ccd4-441f-9192-0870dce7e266" DisplayName="Reply to Email" Email="[currentEmail]" sap:VirtualizedContainerService.HintSize="520,478.4" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_2" Importance="Normal" PreferredTimezone="UTC" ReplyToAll="True" SaveAsDraft="False" UseConnectionService="True" UseSharedMailbox="False">
       <umam:ReplyToEmailConnections.AttachmentsBackup>
         <usau:BackupSlot x:TypeArguments="umame:AttachmentInputMode" StoredValue="Existing">
           <usau:BackupSlot.BackupValues>

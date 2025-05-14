@@ -124,7 +124,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,2967.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_FormElementHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,2998.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="formTextChildren" />
     </Sequence.Variables>
@@ -145,13 +145,13 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="571.2,2825.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUiElement" sap:VirtualizedContainerService.HintSize="571.2,2856.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[formTextChildren]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUiElement" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,2704" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="569.6,2735.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="textInputChildren" />
               <Variable x:TypeArguments="ui:UiElement" Name="inputArea" />
@@ -198,13 +198,13 @@
                 <InArgument x:TypeArguments="ui:UiElement">[textInputChildren.ElementAt(1)]</InArgument>
               </Assign.Value>
             </Assign>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="536,2238.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="536,2269.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="27994dcd-f9df-4dd4-a79d-7c0afda1d3de" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,2078.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="502.4,2109.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="inputAreaText" />
                       <Variable x:TypeArguments="x:String" Name="labelAreaText" />
@@ -215,22 +215,27 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="468.8,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_3" InUiElement="[inputArea]" Result="[inputAreaText]" Version="V4" />
-                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="468.8,1796.8" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[inputAreaText = &quot;&quot;]" sap:VirtualizedContainerService.HintSize="468.8,1828" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1557.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="467.2,1588.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="visibleinnertext" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="433.6,220" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_4" InUiElement="[labelArea]" Result="[labelAreaText]" Version="V4" />
-                          <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                          <Assign sap2010:Annotation.AnnotationText="DEBUG" sap:VirtualizedContainerService.HintSize="433.6,144.8" sap2010:WorkflowViewState.IdRef="Assign_6">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[CVText]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
                               <InArgument x:TypeArguments="x:String">FARIS OSAMA SOFTWARE ENGINEER +20 112 311 1713 FARIS.OSAMA347@GMAIL.COM NEW CAIRO, EGYPT GITHUB.COM/LINZI-V7 LINKEDIN.COM/IN/FARIS-OSAMA CAREER OBJECTIVE Computer Science undergraduate specializing in Software Engineering with a strong interest in Web Development. Passionate about problem-solving, building responsive web applications, and continuously improving my skills. Seeking opportunities to contribute to real-world projects and enhance my experience in frontend and full-stack development. EDUCATION 2022 - PRESENT Ain Shams University Cairo, Egypt Faculty of Computer and Information Sciences Software Engineering Program • CGPA: 3.7 • Relevant Coursework: Data Structures, Algorithm Analysis &amp; Design, Object-Oriented Programming, Web Engineering, Structured Programming, Design Patterns, DBMS 2019 - 2022 El Rowad College Cairo, Egypt IGCSE Division • 8 O-Levels Including Computer Science and Information &amp; Communication Technology (ICT) • 2 AS-Levels Including Math and Physics. • Total Grade: 99% RELEVANT SKILLS • Programming Languages: C++, Java, Python, JavaScript • Web Development (Actively Learning): HTML, CSS, JavaScript • Databases: SQL (Oracle) • Tools &amp; Technologies: Git, Jira, draw.io, Microsoft Office • Soft Skills: Fast Learner, Efficient Problem Solver, Teamwork, Critical Thinking, Time Management PROJECTS • Icy Tower – Structured Programming Game (1st Year) o Technologies used: C++, SFML o Developed the collision detection system and main menu for the game. o Gained experience in teamwork and project planning during game development. • Food Management System – Object-Oriented Programming Project (2nd Year) o Technologies used: Javao Implemented a user management system for registration and authentication. o Contributed to order management and admin dashboard functionalities. • Pac-Man – Data Structures Project (2nd Year) o Technologies used: C++, SFML o Developed level maps using graph algorithms, improving pathfinding efficiency. Optimized leaderboard storage with BSTs, reducing retrieval time. o Designed and implemented collision detection using graph-based algorithms • Sound Packing – Algorithm Analysis Project (3 rd Year) o Technologies used: C++ o Designed and implemented an algorithm using dynamic programming to efficiently organize audio files into folders, optimizing storage. o Strengthened skills in algorithm design and complexity analysis. • Admin Dashboard – Frontend Development Project (Learning Project) o Technologies used: HTML, CSS o Designed and developed a visually appealing admin dashboard layout as part of The Odin Project curriculum. o Utilized CSS Grid for an efficient and flexible layout structure. o Enhanced UI design principles and gained hands-on experience in frontend styling. • The Odin Project – Full Stack Curriculum (In Progress) o Self-Paced Learning – https://www.theodinproject.com/ o Completed foundational modules in HTML, CSS, and basic JavaScript. o Currently 50% through the JavaScript module, with regular progress in concepts like DOM manipulation, event handling, asynchronous programming and dynamic UI behavior. o Built multiple hands-on projects including Admin Dashboard, Tic-Tac-Toe, Todo-List o All related projects are version-controlled and publicly available on GitHub. o Actively learning and applying new concepts through real-world web development challenges</InArgument>
                             </Assign.Value>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
                           </Assign>
                           <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
                             <Assign.To>

@@ -3,6 +3,8 @@
     <x:Property Name="jobKeyword" Type="InArgument(x:String)" />
     <x:Property Name="CVText" Type="InArgument(x:String)" />
     <x:Property Name="CVPath" Type="InArgument(x:String)" />
+    <x:Property Name="numOfApplicationsArg" Type="InArgument(x:Int32)" />
+    <x:Property Name="userEmailArg" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -58,6 +60,7 @@
       <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
       <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -121,6 +124,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>fd0710532108.GvY0Y2UwWpA1UR9ZZ2oHQxH</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="914.8000000000001,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -249,6 +253,8 @@
         <InArgument x:TypeArguments="sd:DataTable" x:Key="jobsDataTable">[extractedData]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="CVText">[CVText]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="CVPath">[CVPath]</InArgument>
+        <InArgument x:TypeArguments="x:Int32" x:Key="numOfApplicationsArg">[numOfApplicationsArg]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="userEmailArg">[userEmailArg]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
