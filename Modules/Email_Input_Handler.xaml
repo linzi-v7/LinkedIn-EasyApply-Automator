@@ -178,7 +178,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Function takes email as an argument and returns the data needed for later processing (numOfApplications, Job Keyword, CVText and CVPath)" DisplayName="Email_Input_Handler" sap:VirtualizedContainerService.HintSize="914.8000000000001,3406.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Function takes email as an argument and returns the data needed for later processing (numOfApplications, Job Keyword, CVText and CVPath)" DisplayName="Email_Input_Handler" sap:VirtualizedContainerService.HintSize="914.8000000000001,3568" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSenderEmail" />
       <Variable x:TypeArguments="x:String" Name="strRequestInfo" />
@@ -253,20 +253,20 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each attachment" sap:VirtualizedContainerService.HintSize="520,987.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DownloadedAttachments]">
+    <ui:ForEach x:TypeArguments="ummm:O365AttachmentLocalItem" CurrentIndex="{x:Null}" DisplayName="For Each attachment" sap:VirtualizedContainerService.HintSize="520,1148.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DownloadedAttachments]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ummm:O365AttachmentLocalItem">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ummm:O365AttachmentLocalItem" Name="attachment" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="467.2,856.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="518.4,1018.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" Path="{x:Null}" Destination="[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + &quot;\CV.pdf&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="433.6,192" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" PathResource="[attachment]" />
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" Path="{x:Null}" Destination="[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + &quot;\CV.pdf&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="484.8,192" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" PathResource="[attachment]" />
+            <Assign sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_10">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strPath]</OutArgument>
               </Assign.To>
@@ -274,14 +274,25 @@
                 <InArgument x:TypeArguments="x:String">[Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\CV.pdf"]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="433.6,148.8" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[strPath]">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:MessageBox>
-            <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484.8,310.4" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="for debug purposes" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,140" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[strPath]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MessageBox>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
+            <Assign sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="Assign_9">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[strCVPath]</OutArgument>
               </Assign.To>
@@ -289,8 +300,8 @@
                 <InArgument x:TypeArguments="x:String">[strPath]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[strCVPath]" sap:VirtualizedContainerService.HintSize="433.6,115.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="All" Text="[strCVText]" />
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[strCVText]" />
+            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[strCVPath]" sap:VirtualizedContainerService.HintSize="484.8,115.2" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="All" Text="[strCVText]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="484.8,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[strCVText]" />
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
