@@ -5,6 +5,7 @@
     <x:Property Name="CVPath" Type="InArgument(x:String)" />
     <x:Property Name="numOfApplicationsArg" Type="InArgument(x:Int32)" />
     <x:Property Name="userEmailArg" Type="InArgument(x:String)" />
+    <x:Property Name="userConfigArg" Type="InArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -127,7 +128,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="914.8000000000001,2092" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_SearchAndExtract" sap:VirtualizedContainerService.HintSize="914.8000000000001,2091.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="extractedData" />
     </Sequence.Variables>
@@ -151,7 +152,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Click 'Jobs'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Timeout="{x:Null}" Version="V4">
+            <uix:NClick ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickType="Single" ContinueOnError="{x:Null}" CursorMotionType="{x:Null}" DelayAfter="3" DelayBefore="3" DisplayName="Click 'Jobs'" sap:VirtualizedContainerService.HintSize="416,225.6" sap2010:WorkflowViewState.IdRef="NClick_1" InScope="{x:Null}" InUiElement="{x:Null}" KeyModifiers="None" MouseButton="Left" OutUiElement="{x:Null}" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" Timeout="{x:Null}" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="linkedin.com/feed" CVScreenId="18bd773f-24cd-487d-bbee-2691646a6efe" ContentHash="6QY4dPqxskiw8DwUmH1cAA" CvTextArea="1024, 224, 31, 13" CvTextArgument="Jobs" CvType="Text" DesignTimeRectangle="990, 182, 100, 65" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='                                                                                                      Jobs            ' tag='A' type='' class='vZAEfLfqLlKjBlZFJsdSpxkQeJIBredNIdHbSsqNQ  &amp;#xA;         global-nav__primary-link' check:innerText='Jobs' /&gt;" Guid="438e6d4f-31be-4324-8ccc-60a54783794e" InformativeScreenshot="ed23c06570644881b570448e0d286b38.png" Reference="APb3D8kHDUyuuOT2uOGFlA/46bQkitdvUql3HG5LsAwZw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Feed | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
               </uix:NClick.Target>
@@ -166,7 +167,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" SecureText="{x:Null}" Text="[jobKeyword]" Timeout="{x:Null}" Version="V4">
+            <uix:NTypeInto ActivateBefore="True" AlterIfDisabled="{x:Null}" ClickBeforeMode="Single" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="3" DelayBetweenKeys="{x:Null}" DeselectAfter="{x:Null}" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="416,286.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InScope="{x:Null}" InUiElement="{x:Null}" OutUiElement="{x:Null}" ScopeIdentifier="ed8897f3-d23b-4b61-a720-80f21d1382ac" SecureText="{x:Null}" Text="[jobKeyword]" Timeout="{x:Null}" Version="V4">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="linkedin.com/jobs/search" CVScreenId="b22558cc-0332-42b4-986a-8ddaa8a7c950" CvTextArea="349, 206, 169, 21" CvTextArgument="Title, skill or company" CvType="Text" DesignTimeRectangle="315, 195, 239, 40" DesignTimeScaleFactor="1.25" ElementType="InputBox" FuzzySelectorArgument="&lt;webctrl id='jobs-search-box-keyword-id-ember753' tag='INPUT' type='text' class='basic-input jobs-search-box__text-input jobs-search-box__keyboard-text-input jobs-search-global-typeahead__input' aaname='                                Search by title, skill, or company                                                                                  ' /&gt;" Guid="5537c87e-0119-46ac-8db1-7b50ba2ac5c3" InformativeScreenshot="b79d5daa3ab235cd83691c7ce10a9ca0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Search all Jobs | LinkedIn' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete">
                   <uix:TargetAnchorable.Anchors>
@@ -248,13 +249,14 @@
         <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" ContentHash="C4jt7hY3T0WuJYFVIikZBA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALZSURBVFhH7VffS1NhGD6zZduRujEpUAvCugm66KbLoKuulbooCNLO2S5aoZIGRUJU5kV3GVJ/gQVFNYRIaueI82dLCq2b1C2z0JmliVvNPfF821lzbnPYjnjhCw/nO+/3ve/7fN/7/eCVpI0gdkUjCmRFL5FVvcxkFMtO3SI79Hhwh0cqPN9hsat6lazqPlnVP5uMPlnVq7a4XlpsTo8kyapOFMc7sE7gRLnaCQJcGrJLDLIrOrad0wTYTuPkf8BYjJmeAAOW13lxsnVYYG99T75JZCbAQHvqe9DeN4WF8BIWwhG090+hvC6vJDIT4JKfaB3Gr1AEhrBNHfvSOFsLNjCBWP6NFEREGpgCpmVdUkAwEDceZ01wQ+YS3B63zWFsdgKEtUZDwVmPwNYaTTinnmngvwEjIPXbnV3YdaEbJa7uxNg0wbMToDM6ufxoFLfcfgG2qaPD43feodkdwM3nfjQ9GcehqwPYfdGLU20jeOCZxIv3M3APBXHb7ceR629QtDJ4dgI2Rcf+xj5MfA8lNiHb1FmrPSKwIfOLEVx7PIanvmmxX5IlCmBsehFn7n9AkcMkAr8jUXz7GUaU0TKIP7iIo81vYVuejvwQMCSyFEVgJgTf+HyMUEr/vVdfsMPZZQ6B8J8l3O2cwOGmQZTV9uBYyxD6R+eWjRkcm0u9SfNHwPNxFqW1XhTGHy2ejNNtI+L+MMQfDKGioVf4zjuBlo7AsuNmUzQcvDKArz/CK+xNIXDj2biY9T8COioa0tuvG4FM9psENgnkTGDfpV5xeUzOhgTYps5araHx4Sdx29Epv/wvTCGQyT4nAgSfVRqQNcE2dXyS+fIdiOv55StpPNWr2SeNyU7AmEkyDD1vu2R9avDV7DMRYJHAYiF1oFlgEcRiSJJYHlldnRa7qlXGO8jOTPhkVau01r222J1arD6UVY0okBWNrLg0a0XpqlC0nSyEWRBvCPkL503cP2RijC4AAAAASUVORK5CYII=" InformativeScreenshot="7141c80b47fa59cfe9101c2061b9ab36.jpg" Reference="APb3D8kHDUyuuOT2uOGFlA/0vOdHHGJCEWk7cx1w7cxaQ" Selector="&lt;html app='chrome.exe' title='(34) Feed | LinkedIn' /&gt;" Title="(34) Feed | LinkedIn" Url="https://www.linkedin.com/feed/" Version="V1" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_EasyApply - Invoke Workflow File (Modules\LinkedIn_EasyApply.xaml)" sap:VirtualizedContainerService.HintSize="483.2,167.2" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="Modules\LinkedIn_EasyApply.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LinkedIn_EasyApply - Invoke Workflow File (Modules\LinkedIn_EasyApply.xaml)" sap:VirtualizedContainerService.HintSize="483.2,166.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="{x:Null}" LogEntry="{x:Null}" LogExit="{x:Null}" Timeout="{x:Null}" UnSafe="False" WorkflowFileName="Modules\LinkedIn_EasyApply.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="sd:DataTable" x:Key="jobsDataTable">[extractedData]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="CVText">[CVText]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="CVPath">[CVPath]</InArgument>
         <InArgument x:TypeArguments="x:Int32" x:Key="numOfApplicationsArg">[numOfApplicationsArg]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="userEmailArg">[userEmailArg]</InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="userConfigArg">[userConfigArg]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>

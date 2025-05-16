@@ -122,7 +122,7 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LinkedIn_DropDownHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,4433.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LinkedIn_DropDownHandler" sap:VirtualizedContainerService.HintSize="914.8000000000001,3882.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="dropDownLabels" />
       <Variable x:TypeArguments="x:String" Name="currentTextLabel" />
@@ -134,7 +134,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:FindChildren Children="[dropDownLabels]" DisplayName="Find DropDown Labels" Filter="&lt;webctrl tag='LABEL' class='fb-dash-form-element__label&amp;#xA;        fb-dash-form-element__label-title--is-required' parentclass='fb-dash-form-element *'  /&gt;" sap:VirtualizedContainerService.HintSize="604.8,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+    <ui:FindChildren Children="[dropDownLabels]" DisplayName="Find DropDown Labels" Filter="&lt;webctrl tag='LABEL' class='fb-dash-form-element__label&amp;#xA;        fb-dash-form-element__label-title--is-required' parentclass='fb-dash-form-element *'  /&gt;" sap:VirtualizedContainerService.HintSize="555.2,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
       <ui:FindChildren.Target>
         <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[formElementArg]" Id="236d5b20-c83e-4307-83d9-19fb68152bf6">
           <ui:Target.TimeoutMS>
@@ -146,7 +146,7 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <ui:FindChildren Children="[dropDowns]" DisplayName="Find DropDowns" Filter="&lt;webctrl tag='SELECT' idx='*' /&gt;" sap:VirtualizedContainerService.HintSize="604.8,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
+    <ui:FindChildren Children="[dropDowns]" DisplayName="Find DropDowns" Filter="&lt;webctrl tag='SELECT' idx='*' /&gt;" sap:VirtualizedContainerService.HintSize="555.2,118.4" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
       <ui:FindChildren.Target>
         <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[formElementArg]" Id="236d5b20-c83e-4307-83d9-19fb68152bf6">
           <ui:Target.TimeoutMS>
@@ -158,13 +158,13 @@
         </ui:Target>
       </ui:FindChildren.Target>
     </ui:FindChildren>
-    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="[currentIndex]" DisplayName="For Each currentDropDownLabel" sap:VirtualizedContainerService.HintSize="604.8,4173.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dropDownLabels]">
+    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="[currentIndex]" DisplayName="For Each currentDropDownLabel" sap:VirtualizedContainerService.HintSize="555.2,3622.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[dropDownLabels]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="ui:UiElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentDropDownLabel" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="603.2,4052" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,3500.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="currentDropDown" />
               <Variable x:TypeArguments="scg:IList(x:String)" Name="optionsList" />
@@ -178,7 +178,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap2010:Annotation.AnnotationText="get corresponding drop down" sap:VirtualizedContainerService.HintSize="569.6,144.8" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap2010:Annotation.AnnotationText="get corresponding drop down" sap:VirtualizedContainerService.HintSize="520,144.8" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="ui:UiElement">[currentDropDown]</OutArgument>
               </Assign.To>
@@ -191,20 +191,20 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </Assign>
-            <ui:CreateList x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="options list for dropdown for later use" DisplayName="Create List" sap:VirtualizedContainerService.HintSize="569.6,198.4" sap2010:WorkflowViewState.IdRef="CreateList`1_1" NewList="[optionsList]">
+            <ui:CreateList x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="options list for dropdown for later use" DisplayName="Create List" sap:VirtualizedContainerService.HintSize="520,198.4" sap2010:WorkflowViewState.IdRef="CreateList`1_1" NewList="[optionsList]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CreateList>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="569.6,3648.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="23c6479a-44e3-49b4-8d7c-5b4ff6cb3445" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="520,3097.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[browserTab]" OpenMode="Never" ScopeGuid="23c6479a-44e3-49b4-8d7c-5b4ff6cb3445" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="536,3488.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486.4,2937.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="dropDownOptions" />
                     </Sequence.Variables>
@@ -213,8 +213,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetText DisplayName="Get Label Text" sap:VirtualizedContainerService.HintSize="502.4,169.6" sap2010:WorkflowViewState.IdRef="NGetText_1" InUiElement="[currentDropDownLabel]" TextString="[currentTextLabel]" Version="V4" />
-                    <Assign sap2010:Annotation.AnnotationText="clean the text, as it gets the label innertext duplicated" sap:VirtualizedContainerService.HintSize="502.4,145.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <uix:NGetText DisplayName="Get Label Text" sap:VirtualizedContainerService.HintSize="452.8,169.6" sap2010:WorkflowViewState.IdRef="NGetText_1" InUiElement="[currentDropDownLabel]" TextString="[currentTextLabel]" Version="V4" />
+                    <Assign sap2010:Annotation.AnnotationText="clean the text, as it gets the label innertext duplicated" sap:VirtualizedContainerService.HintSize="452.8,145.6" sap2010:WorkflowViewState.IdRef="Assign_2">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[currentTextLabel]</OutArgument>
                       </Assign.To>
@@ -227,7 +227,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <If sap2010:Annotation.AnnotationText="skip processing for phone country code and email address dropdowns" Condition="[currentTextLabel.Contains(&quot;Phone country code&quot;) Or currentTextLabel.Contains(&quot;Email address&quot;) Or currentTextLabel.Contains(&quot;Email&quot;)]" sap:VirtualizedContainerService.HintSize="502.4,315.2" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If sap2010:Annotation.AnnotationText="skip processing for phone country code and email address dropdowns" Condition="[currentTextLabel.Contains(&quot;Phone country code&quot;) Or currentTextLabel.Contains(&quot;Email address&quot;) Or currentTextLabel.Contains(&quot;Email&quot;)]" sap:VirtualizedContainerService.HintSize="452.8,315.2" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -256,7 +256,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,338.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                           <sap:WorkflowViewStateService.ViewState>
@@ -275,7 +275,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <ui:FindChildren sap2010:Annotation.AnnotationText="find all &lt;option&gt; elements in the current drop down" Children="[dropDownOptions]" DisplayName="Find Children" Filter="&lt;webctrl tag='option' /&gt;" sap:VirtualizedContainerService.HintSize="502.4,149.6" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
+                    <ui:FindChildren sap2010:Annotation.AnnotationText="find all &lt;option&gt; elements in the current drop down" Children="[dropDownOptions]" DisplayName="Find Children" Filter="&lt;webctrl tag='option' /&gt;" sap:VirtualizedContainerService.HintSize="452.8,149.6" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_DESCENDANTS">
                       <ui:FindChildren.Target>
                         <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[currentDropDown]" Id="ce563b63-ee47-42ff-8ea2-c9c6bed8f7d8">
                           <ui:Target.TimeoutMS>
@@ -292,7 +292,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:FindChildren>
-                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="get all option values in current drop down" DisplayName="For Each currentDropDownOption" sap:VirtualizedContainerService.HintSize="502.4,380" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[dropDownOptions]">
+                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="get all option values in current drop down" DisplayName="For Each currentDropDownOption" sap:VirtualizedContainerService.HintSize="452.8,380" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[dropDownOptions]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="ui:UiElement">
                           <ActivityAction.Argument>
@@ -316,7 +316,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
-                    <Assign sap:VirtualizedContainerService.HintSize="502.4,114.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+                    <Assign sap:VirtualizedContainerService.HintSize="452.8,114.4" sap2010:WorkflowViewState.IdRef="Assign_4">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strAllOptions]</OutArgument>
                       </Assign.To>
@@ -324,7 +324,7 @@
                         <InArgument x:TypeArguments="x:String">[String.Join(", ", optionsList)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,310.4" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
@@ -341,8 +341,14 @@
                           </ui:MessageBox>
                         </Sequence>
                       </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,306.4" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="467.2,196" sap2010:WorkflowViewState.IdRef="Sequence_14">
                           <sap:WorkflowViewStateService.ViewState>
@@ -365,8 +371,14 @@
                           </Assign>
                         </Sequence>
                       </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <Assign sap:VirtualizedContainerService.HintSize="502.4,114.4" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign sap:VirtualizedContainerService.HintSize="452.8,114.4" sap2010:WorkflowViewState.IdRef="Assign_5">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[LLMPrompt]</OutArgument>
                       </Assign.To>
@@ -374,13 +386,13 @@
                         <InArgument x:TypeArguments="x:String">[String.Format("Given the following question, available options, and resume text, pick the most relevant option. You must select one of the provided options EXACTLY AS WRITTEN. Do not return anything other than the text of the selected option. Do not include punctuation, formatting, or markup. Question: {0}, Options: {1}. CV: {2}. Return only the best matching option.", currentTextLabel, strAllOptions ,CVText)]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LLM_API_Request - Invoke Workflow File (Modules\LLM_API_Request.xaml)" sap:VirtualizedContainerService.HintSize="502.4,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LLM_API_Request.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LLM_API_Request - Invoke Workflow File (Modules\LLM_API_Request.xaml)" sap:VirtualizedContainerService.HintSize="452.8,176" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Modules\LLM_API_Request.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <OutArgument x:TypeArguments="njl:JObject" x:Key="parsedResponse">[LLMResponse]</OutArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="strPrompt">[LLMPrompt]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <Assign sap:VirtualizedContainerService.HintSize="502.4,114.4" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign sap:VirtualizedContainerService.HintSize="452.8,114.4" sap2010:WorkflowViewState.IdRef="Assign_6">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strResponse]</OutArgument>
                       </Assign.To>
@@ -388,7 +400,7 @@
                         <InArgument x:TypeArguments="x:String">[LLMResponse("choices")(0)("message")("content").ToString()]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502.4,310.4" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452.8,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_4">
                       <ui:CommentOut.Body>
                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="449.6,200" sap2010:WorkflowViewState.IdRef="Sequence_13">
                           <sap:WorkflowViewStateService.ViewState>
@@ -405,8 +417,14 @@
                           </ui:MessageBox>
                         </Sequence>
                       </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="502.4,205.6" sap2010:WorkflowViewState.IdRef="NClick_1" InUiElement="[currentDropDown]" KeyModifiers="None" MouseButton="Left" Version="V4">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="452.8,205.6" sap2010:WorkflowViewState.IdRef="NClick_1" InUiElement="[currentDropDown]" KeyModifiers="None" MouseButton="Left" Version="V4">
                       <uix:NClick.VerifyOptions>
                         <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                           <uix:VerifyExecutionOptions.Retry>
@@ -418,27 +436,39 @@
                         </uix:VerifyExecutionOptions>
                       </uix:NClick.VerifyOptions>
                     </uix:NClick>
-                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUIElement" sap:VirtualizedContainerService.HintSize="502.4,558.4" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[dropDownOptions]">
+                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each currentUIElement" sap:VirtualizedContainerService.HintSize="452.8,764" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[dropDownOptions]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="ui:UiElement">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="ui:UiElement" Name="currentUIElement" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="451.2,435.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="451.2,640.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[currentUIElement.Get(&quot;value&quot;).ToString().Contains(strResponse)]" sap:VirtualizedContainerService.HintSize="417.6,375.2" sap2010:WorkflowViewState.IdRef="If_2">
+                            <If Condition="[currentUIElement.Get(&quot;value&quot;).ToString().Contains(strResponse)]" sap:VirtualizedContainerService.HintSize="417.6,580.8" sap2010:WorkflowViewState.IdRef="If_2">
                               <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,220.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,426.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <uix:NSelectItem ContinueOnError="True" DisplayName="Select Item" sap:VirtualizedContainerService.HintSize="382.4,160.8" sap2010:WorkflowViewState.IdRef="NSelectItem_1" InUiElement="[currentDropDown]" Item="[currentUIElement.Get(&quot;value&quot;).ToString()]" Version="V4" />
+                                  <uix:NSelectItem ContinueOnError="True" DisplayName="Select Item" sap:VirtualizedContainerService.HintSize="382.4,169.6" sap2010:WorkflowViewState.IdRef="NSelectItem_1" InUiElement="[currentDropDown]" Item="[currentUIElement.Get(&quot;value&quot;).ToString()]" Version="V4" />
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="382.4,196.8" sap2010:WorkflowViewState.IdRef="NClick_2" InUiElement="[currentDropDown]" KeyModifiers="None" MouseButton="Left" Version="V4">
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
                                 </Sequence>
                               </If.Then>
                               <If.Else>
